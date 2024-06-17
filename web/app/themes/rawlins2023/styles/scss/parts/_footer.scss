@@ -1,0 +1,28 @@
+.footer {
+    padding: 10px 0 60px;
+
+    a {
+        &:hover {
+            color: #000;
+        }
+    }
+}
+
+.footer__content {
+    border-top: 1px solid black;
+    padding-top: 10px;
+}
+
+.footer__since,
+.footer__copyright {
+    margin-top: 10px;
+}
+
+.footer__skull {
+    margin-top: 60px;
+
+    img {
+        width: 56px;
+        height: auto;
+    }
+}

@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'ABC Favorit Unlicensed Trial';
+    src: url('../fonts/ABCFavorit-Regular.eot');
+    src: url('../fonts/ABCFavorit-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ABCFavorit-Regular.woff2') format('woff2'),
+        url('../fonts/ABCFavorit-Regular.woff') format('woff'),
+        url('../fonts/ABCFavorit-Regular.svg#ABCFavorit-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ABC Favorit Unlicensed Trial';
+    src: url('../fonts/ABCFavorit-Light.eot');
+    src: url('../fonts/ABCFavorit-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ABCFavorit-Light.woff2') format('woff2'),
+        url('../fonts/ABCFavorit-Light.woff') format('woff'),
+        url('../fonts/ABCFavorit-Light.svg#ABCFavorit-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ABC Favorit Mono Unlicensed Trial';
+    src: url('../fonts/ABCFavoritMono-Light.eot');
+    src: url('../fonts/ABCFavoritMono-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/ABCFavoritMono-Light.woff2') format('woff2'),
+        url('../fonts/ABCFavoritMono-Light.woff') format('woff'),
+        url('../fonts/ABCFavoritMono-Light.svg#ABCFavoritMono-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

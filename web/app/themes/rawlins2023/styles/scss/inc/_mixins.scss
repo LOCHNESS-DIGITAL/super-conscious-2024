@@ -1,0 +1,18 @@
+// Mixins that can be used globally go here.
+// This file should not output anything, just include it as a library in other files - so do not add regular CSS rules here.
+
+
+@mixin fp() {
+    font-family: 'ABC Favorit Unlicensed Trial';
+    font-weight: 400;
+}
+
+@mixin fp--light() {
+    font-family: 'ABC Favorit Unlicensed Trial';
+    font-weight: 300;
+}
+
+@mixin fs() {
+    font-family: 'ABC Favorit Mono Unlicensed Trial';
+    font-weight: 300;
+}

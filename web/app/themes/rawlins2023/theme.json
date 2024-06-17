@@ -1,0 +1,66 @@
+{
+  "version": 2,
+  "settings": {
+      "color": {
+          "duotone": [
+              {
+                  "colors": [ "#000", "#FFF" ],
+                  "slug": "black-and-white",
+                  "name": "Black and White"
+              }
+          ],
+          "palette": [
+              {
+                  "slug": "pink",
+                  "color": "#ffb5ff",
+                  "name": "Pink"
+              },
+              {
+                  "slug": "blue",
+                  "color": "#3fdbff",
+                  "name": "Blue"
+              },
+              {
+                  "slug": "yellow",
+                  "color": "#ffed22",
+                  "name": "Yellow"
+              },
+              {
+                "slug": "green",
+                "color": "#9ee5a7",
+                "name": "Green"
+            }
+          ]
+      },
+      "layout": {
+        "contentSize": "800px",
+        "wideSize": "1000px"
+      },
+      "typography": {
+          "fontFamilies": [
+              {
+                  "fontFamily": "Nunito, sans-serif",
+                  "slug": "nunito",
+                  "name": "Nunito"
+              },
+              {
+                  "fontFamily": "Barlow, sans-seri;",
+                  "slug": "barlow",
+                  "name": "Barlow"
+              }
+          ],
+          "fontSizes": [
+              {
+                  "slug": "big",
+                  "size": 32,
+                  "name": "Big"
+              },
+              {
+                  "slug": "x-large",
+                  "size": 46,
+                  "name": "Large"
+              }
+          ]
+      }
+  }
+}

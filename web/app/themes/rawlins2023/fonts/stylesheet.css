@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'ABC Favorit Unlicensed Trial';
+    src: url('ABCFavorit-Regular.eot');
+    src: url('ABCFavorit-Regular.eot?#iefix') format('embedded-opentype'),
+        url('ABCFavorit-Regular.woff2') format('woff2'),
+        url('ABCFavorit-Regular.woff') format('woff'),
+        url('ABCFavorit-Regular.svg#ABCFavorit-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ABC Favorit Unlicensed Trial';
+    src: url('ABCFavorit-Light.eot');
+    src: url('ABCFavorit-Light.eot?#iefix') format('embedded-opentype'),
+        url('ABCFavorit-Light.woff2') format('woff2'),
+        url('ABCFavorit-Light.woff') format('woff'),
+        url('ABCFavorit-Light.svg#ABCFavorit-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ABC Favorit Mono Unlicensed Trial';
+    src: url('ABCFavoritMono-Light.eot');
+    src: url('ABCFavoritMono-Light.eot?#iefix') format('embedded-opentype'),
+        url('ABCFavoritMono-Light.woff2') format('woff2'),
+        url('ABCFavoritMono-Light.woff') format('woff'),
+        url('ABCFavoritMono-Light.svg#ABCFavoritMono-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

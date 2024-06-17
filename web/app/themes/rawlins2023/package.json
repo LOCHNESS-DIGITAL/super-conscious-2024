@@ -1,0 +1,17 @@
+{
+  "name": "rawlins2022",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel watch src/index.js src/admin.js --no-cache --hmr-port 8080",
+    "build": "parcel build src/index.js src/admin.js --no-cache"
+  },
+  "source": "dist/index.js",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "parcel": "^2.0",
+    "sass": "^1.30.0"
+  }
+}

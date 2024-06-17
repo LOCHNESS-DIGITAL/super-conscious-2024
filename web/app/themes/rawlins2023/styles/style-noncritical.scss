@@ -1,0 +1,26 @@
+// Set up the non-critical styles that load on every page. Styles for things "below the fold" (yes even though that is a dated concept) should be loaded here. The resulting compiled CSS file is lazy-loaded on every page. More details for how the CSS is loaded in <theme-folder>/inc/enqueue.php, look for "function rawlins_styles()".
+
+// Includes
+@import 'scss/inc/config';
+@import 'scss/inc/mixins';
+@import 'scss/inc/functions';
+@import 'scss/inc/layout';
+@import 'scss/inc/animations';
+
+// Templates
+@import 'scss/templates/front-page.scss';
+@import 'scss/templates/template-info.scss';
+
+
+// Globals ( any classes or elements that are commonly used, like .button or .icon )
+@import 'scss/globals/entry-content';
+@import 'scss/globals/components';
+
+// Blocks
+// @import 'scss/blocks/test';
+
+// Parts
+@import 'scss/parts/work';
+@import 'scss/parts/footer';
+@import 'scss/parts/modal';
+@import 'scss/parts/password-protected';

@@ -1,0 +1,45 @@
+.header {
+    padding: rem(20px) 0 10.1rem;
+}
+
+.header__logo {
+    position: relative;
+    
+    img {
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 143px;
+        height: 69px;
+    }
+
+    &:hover {
+        img {
+            opacity: 1;
+        }
+
+        svg {
+            opacity: 0;
+        }
+    }
+}
+
+.header__nav {
+    a:first-child {
+        margin-right: rem(16px);
+    }
+}
+
+.header__row {
+    @media screen and (max-width: 980px) {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+
+        > * {
+            margin-top: 0 !important;
+        }
+    }
+}

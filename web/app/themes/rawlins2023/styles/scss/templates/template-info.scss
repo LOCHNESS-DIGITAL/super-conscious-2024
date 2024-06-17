@@ -1,0 +1,145 @@
+.info-intro__content {
+    font-size: 2rem;
+    max-width: 584px;
+    width: 100%;
+
+    @media screen and (max-width: 980px) {
+        display: none;
+    }
+
+    &.info-intro__content--mobile {
+        display: none;
+
+        @media screen and (max-width: 980px) {
+            display: block;
+        }
+    }
+
+    p + p {
+        margin-top: rem(25px);
+    }
+}
+
+.info-intro__image {
+    margin-bottom: rem(84px);
+    background-position: left center;
+    background-size: 100% auto;
+    background-repeat: repeat-x;
+    padding-top: 38%;
+
+    @media screen and (max-width: 980px) {
+        padding-top: 57%;
+        margin-top: rem(50px);
+
+        &.info-intro__image--mobile {
+            display: block;
+        }
+
+        &:not(.info-intro__image--mobile) {
+            display: none;
+        }
+    }
+}
+
+.info-intro__image--mobile {
+    display: none;
+}
+
+.services,
+.partners {
+
+    h2,
+    h3,
+    .partners__list li {
+        @include fp--light;
+        font-size: rem(20px);
+        margin-bottom: rem(40px);
+    }
+
+    .partners__list li {
+        margin-bottom: rem(5px);
+        text-transform: none;
+    }
+
+    li {
+        @include fs;
+        font-size: 1rem;
+        text-transform: uppercase;
+
+        &:last-child span {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.services__row,
+.partners__row {
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-top: 1px solid #000;
+    padding: rem(40px) 0;
+    // min-height: rem(372px);
+
+    @media screen and (max-width: 980px) {
+        display: flex;
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+        min-height: 0;
+    }
+
+    > * {
+        width: 16%;
+        min-width: rem(265px);
+
+        @media screen and (max-width: 1170px) {
+            min-width: 0;
+            width: 22%;
+        }
+
+        @media screen and (max-width: 768px) {
+            width: 100%;
+        }
+
+        &:not(:last-child) {
+            margin-right: rem(40px);
+        }
+    }
+}
+
+.partners__row {
+    padding-bottom: rem(20px);
+}
+
+.services__list,
+.partners__list {
+    @media screen and (max-width: 768px) {
+        margin-bottom: rem(20px);
+    }
+}
+
+.partners__list li span {
+    font-size: rem(10px);
+    display: block;
+    text-transform: none;
+    margin-bottom: rem(32px);
+}
+
+.partners__description {
+    width: 100%;
+    max-width: rem(270px);
+    font-size: rem(14px);
+
+    @media screen and (max-width: 768px) {
+        margin-bottom: rem(20px);
+    }
+}
+
+body:not(.home) {
+    .header {
+        @media screen and (max-width: 980px) {
+            padding-bottom: rem(60px);
+        }
+    }
+}

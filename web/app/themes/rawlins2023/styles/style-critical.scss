@@ -1,0 +1,20 @@
+// Set up the critical styles that are loaded on every page (global critical styles).
+
+// Includes
+// (these should not contain anything that actually outputs to a CSS file, so just stuff like variables and mixins)
+@import 'scss/critical/fonts';
+@import 'scss/inc/config';
+@import 'scss/inc/mixins';
+@import 'scss/inc/functions';
+@import 'scss/inc/layout';
+
+// Reset
+@import 'scss/critical/reset';
+
+// Globals ( any classes or elements that are commonly used, like .button or .icon )
+@import 'scss/critical/header';
+@import 'scss/critical/navigation';
+@import 'scss/critical/base';
+
+// Templates ( template-name - including media queries. You can override base module styles here too )
+@import 'scss/critical/front-page';
