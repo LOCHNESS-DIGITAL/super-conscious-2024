@@ -158,14 +158,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   align-items: flex-start !important;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1400px) {
   .header__row {
     flex-direction: column;
     position: relative;
   }
-}
 
-@media screen and (max-width: 1400px) {
   .header__icon {
     position: absolute;
     top: 0;
@@ -801,7 +799,7 @@ img {
   display: flex;
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1200px) {
   .work__item__title {
     max-width: 100%;
   }
@@ -874,7 +872,7 @@ img {
   transition: opacity .25s cubic-bezier(0, .39, .34, .74);
 }
 
-@media screen and (min-width: 980px) {
+@media screen and (min-width: 1200px) {
   .work__item__images:not(.dragging) .work__item__image:hover {
     opacity: .8;
     transition: opacity 1.25s cubic-bezier(0, .39, .34, .74);
@@ -1004,6 +1002,22 @@ img {
     opacity: 1;
     transform: scale(1)rotate(1080deg);
   }
+}
+
+.work__flyout {
+  width: 43.3333rem;
+  max-width: 90%;
+  z-index: 10000;
+  height: 100%;
+  color: #fff;
+  background: #000;
+  padding: 3.33333rem;
+  transition: transform .35s;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  transform: translateX(-100%);
 }
 
 .footer {

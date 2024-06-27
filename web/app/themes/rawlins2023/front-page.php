@@ -46,6 +46,7 @@ get_header();
                     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                         <?php
                         $terms = wp_get_post_terms( get_the_ID(), 'work-type', array('fields=all') );
+                        $work_flyout_terms = wp_get_post_terms( get_the_ID(), 'work-type', array('fields=all') );
                         $description = get_field('work_description');
                         $images = get_field('media');
                         $website = get_field('website_url');
@@ -82,7 +83,7 @@ get_header();
                                         </div>
                                     <?php endif; ?>
                                     <div class="work__item__link">
-                                        <a href="<?php echo $website; ?>">Credits</a>
+                                        <a href="#<?php echo get_post_field( 'post_name', get_post() ); ?>-credits">Credits</a>
                                     </div>
                                 </div>
                             </div>
@@ -106,6 +107,44 @@ get_header();
                                         <?php endforeach; ?>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="work__flyout">
+                            <div class="work__flyout__inner">
+                                <div class="work__flyout__close"><?php echo file_get_contents(get_stylesheet_directory() . '/images/icon__work-flyout-close.svg'); ?></div>
+                                <h3 class="work__flyout__title"><?php echo get_the_title(); ?></h3>
+                                <div class="work__flyout__long-description">
+                                    <?php
+                                    if ( $long_description ) {
+                                        echo $long_description;
+                                    } else {
+                                        echo $description;
+                                    }
+                                    ?>
+                                </div>
+                                <div class="work__flyout__table">
+
+                                </div>
+                                <?php if ( $team ): ?>
+                                    <div class="work__flyout__team">
+                                        <?php foreach ( $team as $item ): ?>
+                                            <div class="work__flyout__team-member"><?php echo $item; ?></div>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if ( !empty($work_flyout_terms) ): ?>
+                                    <ul class="work__flyout__terms work__item__terms">
+                                        <?php foreach ( $work_flyout_terms as $term ): ?>
+                                            <?php /*<li><a class="c-button" href="<?php echo get_home_url(); ?>/<?php echo $term->tax; ?>/<?php echo $term->slug; ?>"><span><?php echo $term->name; ?></span></a></li>*/?>
+                                            <li><a class="c-button" href="#"><span><?php echo $term->name; ?></span></a></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                                <?php if ( $website ) : ?>
+                                    <div class="work__flyout__link">
+                                        <a href="<?php echo $website; ?>">Visit Website</a>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endwhile; ?>

@@ -49,7 +49,7 @@
 .header__row {
     align-items: flex-start !important;
     
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1400px) {
         flex-direction: column;
         position: relative;
     }
