@@ -48,6 +48,9 @@ get_header();
                         $terms = wp_get_post_terms( get_the_ID(), 'work-type', array('fields=all') );
                         $work_flyout_terms = wp_get_post_terms( get_the_ID(), 'work-type', array('fields=all') );
                         $description = get_field('work_description');
+                        $long_description = get_field('long_description');
+                        $metrics = get_field('metrics');
+                        $team = get_field('team');
                         $images = get_field('media');
                         $website = get_field('website_url');
                         ?>
@@ -109,26 +112,50 @@ get_header();
                                 </div>
                             </div>
                         </div>
-                        <div class="work__flyout">
+                        <div class="work__flyout" id="<?php echo get_post_field( 'post_name', get_post() ); ?>-credits">
                             <div class="work__flyout__inner">
                                 <div class="work__flyout__close"><?php echo file_get_contents(get_stylesheet_directory() . '/images/icon__work-flyout-close.svg'); ?></div>
-                                <h3 class="work__flyout__title"><?php echo get_the_title(); ?></h3>
-                                <div class="work__flyout__long-description">
-                                    <?php
-                                    if ( $long_description ) {
-                                        echo $long_description;
-                                    } else {
-                                        echo $description;
-                                    }
-                                    ?>
+                                <div class="work__flyout__header">
+                                    <h3 class="work__flyout__title"><?php echo get_the_title(); ?></h3>
+                                    <div class="work__flyout__long-description">
+                                        <?php
+                                        if ( $long_description ) {
+                                            echo $long_description;
+                                        } else {
+                                            echo $description;
+                                        }
+                                        ?>
+                                    </div>
                                 </div>
-                                <div class="work__flyout__table">
-
-                                </div>
+                                <?php if ( $metrics ) : ?>
+                                    <div class="work__flyout__metrics">
+                                        <h4 class="work__flyout__metrics-title">Results</h3>
+                                        <div class="work__flyout__metrics-table">
+                                            <div class="work__flyout__metrics-row">
+                                                <div class="work__flyout__metrics-item">Metric</div>
+                                                <div class="work__flyout__metrics-item">Before</div>
+                                                <div class="work__flyout__metrics-item">After</div>
+                                            </div>
+                                            <div class="work__flyout__metrics-row">
+                                                <div class="work__flyout__metrics-item"></div>
+                                                <div class="work__flyout__metrics-item"></div>
+                                                <div class="work__flyout__metrics-item"></div>
+                                            </div>
+                                            <?php foreach ( $metrics as $metric ) : ?>
+                                                <div class="work__flyout__metrics-row">
+                                                    <div class="work__flyout__metrics-item"><?php echo $metric['metric_name']; ?></div>
+                                                    <div class="work__flyout__metrics-item"><?php echo $metric['before']; ?></div>
+                                                    <div class="work__flyout__metrics-item"><?php echo $metric['after']; ?></div>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
                                 <?php if ( $team ): ?>
                                     <div class="work__flyout__team">
+                                        <h4 class="work__flyout__team-title">Team</h3>
                                         <?php foreach ( $team as $item ): ?>
-                                            <div class="work__flyout__team-member"><?php echo $item; ?></div>
+                                            <div class="work__flyout__team-member"><?php echo $item['team_member']; ?></div>
                                         <?php endforeach; ?>
                                     </div>
                                 <?php endif; ?>

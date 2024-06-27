@@ -4,12 +4,130 @@
     background: black;
     position: fixed;
     left: 100%;
-    transform: translateX(-100%);
+    transform: translate3d(0,0,0);
     transition: transform .35s ease;
     z-index: 10000;
     top: 0;
     height: 100%;
     color: white;
     padding: rem(40px);
-    display: none;
+
+    &.work__flyout--active {
+        transform: translate3d(-100%,0,0);
+    }
+}
+
+.work__flyout__close {
+    cursor: pointer;
+    padding: rem(10px) 0;
+    margin-bottom: rem(22px);
+    display: flex;
+    justify-content: flex-end;
+
+    svg {
+        width: rem(10px);
+        height: rem(10px);
+    }
+}
+
+.work__flyout__header {
+    padding-bottom: rem(22px);
+    margin-bottom: rem(22px);
+    border-bottom: 1px #fff dotted;
+}
+
+.work__flyout__title {
+    font-size: rem(12px);
+    text-transform: uppercase;
+}
+
+.work__flyout__long-description {
+    @include ft();
+    font-size: rem(14px);
+}
+
+.work__flyout__metrics-title,
+.work__flyout__team-title {
+    font-size: rem(12px);
+    text-transform: uppercase;
+    margin-top: rem(22px);
+    margin-bottom: rem(22px);
+}
+
+.work__flyout__metrics-table {
+    @include fs();
+    margin-top: rem(22px);
+    padding-bottom: rem(22px);
+    margin-bottom: rem(22px);
+    border-bottom: 1px #fff dotted;
+}
+
+.work__flyout__metrics-row {
+    display: flex;
+
+    &:nth-child(2) {
+        .work__flyout__metrics-item {
+            border-bottom: 1px dotted #fff;
+            margin-bottom: 2px;
+            line-height: .5;
+        }
+    }
+
+    &:nth-child(3) {
+        .work__flyout__metrics-item {
+            border-top: 1px solid #fff;
+        }
+    }
+
+    > * {
+        flex-basis: 33.333%;
+    }
+}
+
+.work__flyout__metrics-item {
+    padding: rem(2px) 0 0;
+    display: flex;
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+
+    &:not(:first-child) {
+        &:before {
+            content: "| ";
+            padding-right: rem(10px);
+        }
+    }
+
+    &:last-child:after {
+        content: " |";
+        margin-left: auto;
+        padding-right: rem(10px);
+    }
+}
+
+.work__flyout__team {
+    margin-top: rem(22px);
+    padding-bottom: rem(22px);
+    margin-bottom: rem(22px);
+    border-bottom: 1px dotted #fff;
+}
+
+.work__flyout__team-member {
+    text-transform: uppercase;
+    font-size: rem(12px);
+
+}
+
+.work__flyout__terms.work__item__terms {
+    margin: rem(22px) 0 0;
+    max-width: 100%;
+}
+
+.work__flyout__link {
+    margin-top: rem(22px);
+    
+    a {
+        @include fs();
+        text-transform: uppercase;
+        color: white;
+    }
 }

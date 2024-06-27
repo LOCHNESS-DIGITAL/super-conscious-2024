@@ -1013,11 +1013,124 @@ img {
   background: #000;
   padding: 3.33333rem;
   transition: transform .35s;
-  display: none;
   position: fixed;
   top: 0;
   left: 100%;
-  transform: translateX(-100%);
+  transform: translate3d(0, 0, 0);
+}
+
+.work__flyout.work__flyout--active {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.work__flyout__close {
+  cursor: pointer;
+  justify-content: flex-end;
+  margin-bottom: 1.83333rem;
+  padding: .833333rem 0;
+  display: flex;
+}
+
+.work__flyout__close svg {
+  width: .833333rem;
+  height: .833333rem;
+}
+
+.work__flyout__header {
+  border-bottom: 1px dotted #fff;
+  margin-bottom: 1.83333rem;
+  padding-bottom: 1.83333rem;
+}
+
+.work__flyout__title {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.work__flyout__long-description {
+  font-family: Signifier;
+  font-size: 1.16667rem;
+  font-weight: 300;
+}
+
+.work__flyout__metrics-title, .work__flyout__team-title {
+  text-transform: uppercase;
+  margin-top: 1.83333rem;
+  margin-bottom: 1.83333rem;
+  font-size: 1rem;
+}
+
+.work__flyout__metrics-table {
+  border-bottom: 1px dotted #fff;
+  margin-top: 1.83333rem;
+  margin-bottom: 1.83333rem;
+  padding-bottom: 1.83333rem;
+  font-family: ABC Favorit Mono Unlicensed Trial;
+  font-weight: 300;
+}
+
+.work__flyout__metrics-row {
+  display: flex;
+}
+
+.work__flyout__metrics-row:nth-child(2) .work__flyout__metrics-item {
+  border-bottom: 1px dotted #fff;
+  margin-bottom: 2px;
+  line-height: .5;
+}
+
+.work__flyout__metrics-row:nth-child(3) .work__flyout__metrics-item {
+  border-top: 1px solid #fff;
+}
+
+.work__flyout__metrics-row > * {
+  flex-basis: 33.333%;
+}
+
+.work__flyout__metrics-item {
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+  padding: .166667rem 0 0;
+  display: flex;
+}
+
+.work__flyout__metrics-item:not(:first-child):before {
+  content: "| ";
+  padding-right: .833333rem;
+}
+
+.work__flyout__metrics-item:last-child:after {
+  content: " |";
+  margin-left: auto;
+  padding-right: .833333rem;
+}
+
+.work__flyout__team {
+  border-bottom: 1px dotted #fff;
+  margin-top: 1.83333rem;
+  margin-bottom: 1.83333rem;
+  padding-bottom: 1.83333rem;
+}
+
+.work__flyout__team-member {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.work__flyout__terms.work__item__terms {
+  max-width: 100%;
+  margin: 1.83333rem 0 0;
+}
+
+.work__flyout__link {
+  margin-top: 1.83333rem;
+}
+
+.work__flyout__link a {
+  text-transform: uppercase;
+  color: #fff;
+  font-family: ABC Favorit Mono Unlicensed Trial;
+  font-weight: 300;
 }
 
 .footer {

@@ -77,12 +77,27 @@ $(window).on('load', function(){
                 this.classList.remove('hover');
             });
         });
-        
-    
     }
 
-    
+    // Work Flyout
+    document.querySelectorAll('.work__item__link a').forEach(function(item, idx) {
+        item.addEventListener('click', function(e) {
+            const flyoutID = this.hash;
+            e.preventDefault();
+            closeWorkFlyout()
+            document.querySelector(flyoutID).classList.add('work__flyout--active');
+        })
+    });
+
+    document.querySelectorAll('.work__flyout__close').forEach(function(closeButton, idx){
+        closeButton.addEventListener('click', closeWorkFlyout);
+    })    
     
 });
 
 
+function closeWorkFlyout() {
+    document.querySelectorAll('.work__flyout').forEach(function(workFlyout, idx) {
+        workFlyout.classList.remove('work__flyout--active');
+    })
+}

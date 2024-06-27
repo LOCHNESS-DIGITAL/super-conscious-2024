@@ -533,11 +533,11 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"8lqZg":[function(require,module,exports) {
 var _stylesScss = require("./styles.scss");
-var _workJs = require("../js/development/after-libs/work.js");
+var _workEs6Js = require("../js/development/after-libs/work.es6.js");
 var _modalJs = require("../js/development/after-libs/modal.js");
 var _pwProtectionJs = require("../js/development/after-libs/pw-protection.js");
 
-},{"./styles.scss":"kMfPY","../js/development/after-libs/work.js":"eXWRi","../js/development/after-libs/modal.js":"5VGW5","../js/development/after-libs/pw-protection.js":"gEGzy"}],"kMfPY":[function() {},{}],"eXWRi":[function(require,module,exports) {
+},{"./styles.scss":"kMfPY","../js/development/after-libs/work.es6.js":"g99Ty","../js/development/after-libs/modal.js":"5VGW5","../js/development/after-libs/pw-protection.js":"gEGzy"}],"kMfPY":[function() {},{}],"g99Ty":[function(require,module,exports) {
 var _splideExtensionHoverSliderJs = require("./splide-extension-hover-slider.js");
 const { AutoScroll , HoverSlider  } = window.splide.Extensions;
 $(window).on("load", function() {
@@ -605,7 +605,24 @@ $(window).on("load", function() {
             });
         });
     }
+    // Work Flyout
+    document.querySelectorAll(".work__item__link a").forEach(function(item, idx) {
+        item.addEventListener("click", function(e) {
+            const flyoutID = this.hash;
+            e.preventDefault();
+            closeWorkFlyout();
+            document.querySelector(flyoutID).classList.add("work__flyout--active");
+        });
+    });
+    document.querySelectorAll(".work__flyout__close").forEach(function(closeButton, idx) {
+        closeButton.addEventListener("click", closeWorkFlyout);
+    });
 });
+function closeWorkFlyout() {
+    document.querySelectorAll(".work__flyout").forEach(function(workFlyout, idx) {
+        workFlyout.classList.remove("work__flyout--active");
+    });
+}
 
 },{"./splide-extension-hover-slider.js":"eJc4N"}],"eJc4N":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
