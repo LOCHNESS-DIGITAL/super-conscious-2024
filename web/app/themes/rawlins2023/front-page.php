@@ -82,11 +82,11 @@ get_header();
                                 <div class="work__item__links">
                                     <?php if ( $website ) : ?>
                                         <div class="work__item__link">
-                                            <a href="<?php echo $website; ?>">Visit Website</a>
+                                            <a target="_blank" href="<?php echo $website; ?>">Visit Website</a>
                                         </div>
                                     <?php endif; ?>
-                                    <div class="work__item__link">
-                                        <a href="#<?php echo get_post_field( 'post_name', get_post() ); ?>-credits">Credits</a>
+                                    <div class="work__item__link work__item__link--more-info">
+                                        <a href="#<?php echo get_post_field( 'post_name', get_post() ); ?>-credits">More Info</a>
                                     </div>
                                 </div>
                             </div>
@@ -169,7 +169,7 @@ get_header();
                                 <?php endif; ?>
                                 <?php if ( $website ) : ?>
                                     <div class="work__flyout__link">
-                                        <a href="<?php echo $website; ?>">Visit Website</a>
+                                        <a target="_blank" href="<?php echo $website; ?>">Visit Website</a>
                                     </div>
                                 <?php endif; ?>
                             </div>

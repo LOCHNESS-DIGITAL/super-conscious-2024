@@ -53,6 +53,8 @@
 .work__item__description {
     width: 262px;
     max-width: 100%;
+    @include ft();
+    font-size: rem(14px);
 }
 
 .work__item__terms {
@@ -209,6 +211,10 @@
     @media screen and (max-width: 1200px) {
         margin-left: 0;
     }
+
+    @media screen and (max-width: 768px ) {
+        flex-wrap: wrap;
+    }
 }
 
 .work__item__link {
@@ -217,12 +223,21 @@
     text-transform: uppercase;
 
     @media screen and (max-width: 1200px) {
+        &:first-child() {
+            margin-left: 0;
+        }
+    }
+
+    @media screen and (max-width: 768px ) {
+        width: 100%;
+        margin-bottom: rem(22px);
+        display: block;
         margin-left: 0;
     }
 
     a {
         text-decoration: underline;
-        white-space: nowrap;
+        white-space: nowrap;   
 
         &:hover {
             text-decoration: none;

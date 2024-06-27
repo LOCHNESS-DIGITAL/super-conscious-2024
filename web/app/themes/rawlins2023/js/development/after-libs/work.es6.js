@@ -80,11 +80,12 @@ $(window).on('load', function(){
     }
 
     // Work Flyout
-    document.querySelectorAll('.work__item__link a').forEach(function(item, idx) {
+    document.querySelectorAll('.work__item__link--more-info a').forEach(function(item, idx) {
         item.addEventListener('click', function(e) {
             const flyoutID = this.hash;
             e.preventDefault();
             closeWorkFlyout()
+            document.body.classList.add('flyout-active');
             document.querySelector(flyoutID).classList.add('work__flyout--active');
         })
     });
@@ -97,6 +98,7 @@ $(window).on('load', function(){
 
 
 function closeWorkFlyout() {
+    document.body.classList.remove('flyout-active');
     document.querySelectorAll('.work__flyout').forEach(function(workFlyout, idx) {
         workFlyout.classList.remove('work__flyout--active');
     })
