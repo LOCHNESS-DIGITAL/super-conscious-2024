@@ -31,3 +31,9 @@ wp-cli.local.yml
 
 # Server
 stats
+
+# OS
+.DS_Store
+
+# Server
+web/app/wflogs
