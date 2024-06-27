@@ -16,3 +16,8 @@
     font-family: 'ABC Favorit Mono Unlicensed Trial';
     font-weight: 300;
 }
+
+@mixin ft() {
+    font-family: 'Signifier';
+    font-weight: 300;
+}

@@ -20,6 +20,18 @@ global $post;
 
 	<?php wp_head(); ?>
 
+  <?php
+  $homepage_group = get_field('homepage', 'option');
+  $intro_description = $homepage_group['intro_description'];
+  // $capabilities = $homepage_group['capabilities'];
+  // the query
+  $args = array(
+      'post_type' => 'work',
+      'showposts' => -1,
+      'orderby' => 'menu_order'
+  );
+  $work_query = new WP_Query( $args );
+  ?>
 </head>
 <body <?php body_class('loading'); ?>>
 <?php if ( !post_password_required( $post ) ): ?>
@@ -31,11 +43,30 @@ global $post;
     <header class="header">
       <div class="header__inner l-container">
         <div class="header__row">
-          <a href="<?php echo get_home_url(); ?>" class="header__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo__hover-state.gif" alt="Relative Studio" /><?php echo file_get_contents(get_stylesheet_directory() . '/images/relative-studio-2023-logo.svg'); ?></a>
+          <a href="<?php echo get_home_url(); ?>" class="header__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo__hover-state.gif" alt="Super Conscious Studio" /><?php echo file_get_contents(get_stylesheet_directory() . '/images/super-conscious-logo-2024.svg'); ?></a>
+          <div class="intro__description">
+              <div class="intro__description__inner">
+                  <?php echo $intro_description; ?>
+              </div>
+          </div>
+          <div class="intro__capabilities">
+              <?php if ( $work_query->have_posts() ) : ?>
+                  <ul class="intro__capabilities__list">
+                  <li>Clients:</li>
+                  <?php while ( $work_query->have_posts() ) : $work_query->the_post(); ?>
+                      <li><a href="#<?php echo get_post_field( 'post_name', get_post() ); ?>"><?php echo get_the_title(); ?></a></li>
+                  <?php endwhile; ?>
+                  </ul>
+              <?php endif; ?>
+              <?php wp_reset_postdata(); ?>
+          </div>
           <nav class="header__nav">
-            <a href="<?php echo get_home_url(); ?>" class="c-button <?php if(is_front_page()) { ?>c-button--active<?php } ?>">Work</a>
-            <a href="<?php echo get_home_url(); ?>/info" class="c-button <?php if(!is_front_page()) { ?>c-button--active<?php } ?>"><span>Info</span></a>
+            <li class="header__nav__item">New projects: <a href="mailto:info@super-conscious.studio" class="header__nav__link">info@super-conscious.studio</a></li>
+            <li class="header__nav__item">Careers: <a href="mailto:Careers@super-conscious.studio" class="header__nav__link">Careers@super-conscious.studio</a></li>
           </nav>
+          <div class="header__icon">
+            <?php echo file_get_contents(get_stylesheet_directory() . '/images/icon-noggin.svg'); ?>
+          </div>
         </div>
       </div>
     </header>
@@ -43,7 +74,7 @@ global $post;
   <div class="coming-soon">
     <div class="l-container">
       <div class="header__logo">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo__hover-state.gif" alt="Relative Studio" /><?php echo file_get_contents(get_stylesheet_directory() . '/images/relative-studio-2023-logo.svg'); ?>
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo__hover-state.gif" alt="Super Conscious Studio" /><?php echo file_get_contents(get_stylesheet_directory() . '/images/super-conscious-logo-2024.svg'); ?>
       </div>
       <div class="pw-protection">
           <span class="pw-protection__label">what's the password?</span>

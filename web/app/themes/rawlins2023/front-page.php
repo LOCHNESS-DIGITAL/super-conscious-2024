@@ -7,7 +7,7 @@ $capabilities = $homepage_group['capabilities'];
 get_header();
 ?>
 <?php if ( !post_password_required( $post ) ): ?>
-    <section class="intro">
+    <?php /*<section class="intro">
         <div class="intro__inner l-container">
             <div class="intro__row">
                 <div class="intro__description">
@@ -28,6 +28,7 @@ get_header();
             </div>
         </div>
     </section>
+    */?>
 
     <?php
     // the query
@@ -50,18 +51,18 @@ get_header();
                         $website = get_field('website_url');
                         ?>
 
-                        <div class="work__item">
+                        <div class="work__item" id="<?php echo get_post_field( 'post_name', get_post() ); ?>">
                             <div class="work__item__content work__item__row">
                                 <div class="work__item__title">
-
-                                    <?php if ( $website ) : ?>
+                                    <?php /* if ( $website ) : ?>
                                         <a target="_blank" href="<?php echo $website; ?>" class="work__item__external-link">
                                             <h2><?php the_title(); ?></h2>
                                             <?php echo file_get_contents(get_stylesheet_directory() . '/images/icon__external-link.svg'); ?>
                                         </a>
                                     <?php else: ?>
                                         <h2><?php the_title(); ?></h2>
-                                    <?php endif; ?>
+                                    <?php endif; */ ?>
+                                    <h2><?php the_title(); ?></h2>
                                 </div>
                                 <?php if ( $description ): ?>
                                     <div class="work__item__description"><?php echo $description; ?></div>
@@ -74,6 +75,16 @@ get_header();
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif; ?>
+                                <div class="work__item__links">
+                                    <?php if ( $website ) : ?>
+                                        <div class="work__item__link">
+                                            <a href="<?php echo $website; ?>">Visit Website</a>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="work__item__link">
+                                        <a href="<?php echo $website; ?>">Credits</a>
+                                    </div>
+                                </div>
                             </div>
                             <div class="work__item__images work__item__row splide" aria-label="Splide Basic HTML Example">
                                 <div class="splide__track">

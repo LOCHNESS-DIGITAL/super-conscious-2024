@@ -5,6 +5,7 @@ body {
 
 html {
 	font-size: $baseFontSize;
+	scroll-behavior: smooth;
 }
 
 .site-container {
@@ -144,11 +145,13 @@ img {
 	align-items: center;
 	justify-content: space-between;
 
-	@media screen and (max-width: 980px) {
-		display: block;
+	&:not(.header__row) {
+		@media screen and (max-width: 980px) {
+			display: block;
 
-		> *:not(:first-child) {
-			margin-top: 20px;
+			> *:not(:first-child) {
+				margin-top: 20px;
+			}
 		}
 	}
 }
