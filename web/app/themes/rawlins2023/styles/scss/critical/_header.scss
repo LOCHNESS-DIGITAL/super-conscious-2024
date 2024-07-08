@@ -4,6 +4,7 @@
 
 .header__logo {
     position: relative;
+    width: 20.5%;
     
     img {
         opacity: 0;
@@ -27,8 +28,10 @@
 }
 
 .header__nav {
-    @media screen and (max-width: 1400px) {
+    margin-right: 10%;
+    @media screen and (max-width: 1440px) {
         margin-top: rem(40px);
+        margin-right: 0;
     }
 }
 
@@ -47,8 +50,9 @@
 
 .header__row {
     align-items: flex-start !important;
+    justify-content: flex-start !important;
     
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 1440px) {
         flex-direction: column;
         position: relative;
     }
@@ -65,9 +69,12 @@
 }
 
 .header__icon {
-    @media screen and (max-width: 1400px) {
+    margin-left: auto;
+
+    @media screen and (max-width: 1440px) {
         position: absolute;
         right: 0;
         top: 0;
+        margin: 0;
     }
 }

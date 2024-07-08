@@ -1,7 +1,7 @@
 .intro {
     padding-bottom: rem(64px);
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 1440px) {
         padding-bottom: rem(82px);
     }
 }
@@ -13,11 +13,13 @@
 
 .intro__description {
     @include ft();
-    max-width: rem(444px);
+    width: rem(444px);
+    max-width: 100%;
     font-size: rem(13px);
     line-height: rem(18px);
+    margin-right: 10%;
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 1440px) {
         width: rem(444px);
         max-width: 100%;
         margin-top: rem(111px);
@@ -32,7 +34,7 @@
     pointer-events: none;
     display: none;
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 1440px) {
         margin-top: rem(40px);
         display: none;
     }
