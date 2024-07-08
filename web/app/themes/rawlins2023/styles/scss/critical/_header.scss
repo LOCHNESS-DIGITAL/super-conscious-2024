@@ -29,7 +29,7 @@
 
 .header__nav {
     margin-right: 10%;
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1400px) {
         margin-top: rem(40px);
         margin-right: 0;
     }
@@ -52,7 +52,7 @@
     align-items: flex-start !important;
     justify-content: flex-start !important;
     
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1400px) {
         flex-direction: column;
         position: relative;
     }
@@ -71,7 +71,7 @@
 .header__icon {
     margin-left: auto;
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1400px) {
         position: absolute;
         right: 0;
         top: 0;

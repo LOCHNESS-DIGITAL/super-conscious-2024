@@ -141,7 +141,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-right: 10%;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1400px) {
   .header__nav {
     margin-top: 3.33333rem;
     margin-right: 0;
@@ -164,7 +164,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   align-items: flex-start !important;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1400px) {
   .header__row {
     flex-direction: column;
     position: relative;
@@ -175,7 +175,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-left: auto;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1400px) {
   .header__icon {
     margin: 0;
     position: absolute;
@@ -335,7 +335,7 @@ img {
   line-height: 1.5rem;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1400px) {
   .intro__description {
     width: 37rem;
     max-width: 100%;
