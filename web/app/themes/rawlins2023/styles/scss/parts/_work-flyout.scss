@@ -55,7 +55,7 @@ body.flyout-active {
 .work__flyout__header {
     padding-bottom: rem(22px);
     margin-bottom: rem(22px);
-    border-bottom: 1px #fff dotted;
+    border-bottom: 1px #fff dashed;
 }
 
 .work__flyout__title {
@@ -65,7 +65,7 @@ body.flyout-active {
 
 .work__flyout__long-description {
     @include ft();
-    font-size: rem(14px);
+    font-size: rem(13px);
 }
 
 .work__flyout__metrics-title,
@@ -81,25 +81,25 @@ body.flyout-active {
     margin-top: rem(22px);
     padding-bottom: rem(22px);
     margin-bottom: rem(22px);
-    border-bottom: 1px #fff dotted;
+    border-bottom: 1px #fff dashed;
 }
 
 .work__flyout__metrics-row {
     display: flex;
 
-    &:nth-child(2) {
-        .work__flyout__metrics-item {
-            border-bottom: 1px dotted #fff;
-            margin-bottom: 2px;
-            line-height: .5;
-        }
-    }
+    // &:nth-child(2) {
+    //     .work__flyout__metrics-item {
+    //         border-bottom: 1px dashed #fff;
+    //         margin-bottom: 2px;
+    //         line-height: .5;
+    //     }
+    // }
 
-    &:nth-child(3) {
-        .work__flyout__metrics-item {
-            border-top: 1px solid #fff;
-        }
-    }
+    // &:nth-child(3) {
+    //     .work__flyout__metrics-item {
+    //         border-top: 1px solid #fff;
+    //     }
+    // }
 
     > * {
         flex-basis: 33.333%;
@@ -107,17 +107,17 @@ body.flyout-active {
 }
 
 .work__flyout__metrics-item {
-    padding: rem(2px) 0 0;
+    line-height: .9;
+    padding-top: 10px;
     display: flex;
     border-bottom: 1px solid;
     text-transform: uppercase;
 
-    &:not(:first-child) {
-        &:before {
-            content: "| ";
-            padding-right: rem(10px);
-        }
+    &:before {
+        content: "| ";
+        padding-right: rem(10px);
     }
+    
 
     &:last-child:after {
         content: " |";
@@ -130,7 +130,7 @@ body.flyout-active {
     margin-top: rem(22px);
     padding-bottom: rem(22px);
     margin-bottom: rem(22px);
-    border-bottom: 1px dotted #fff;
+    border-bottom: 1px dashed #fff;
 }
 
 .work__flyout__team-member {

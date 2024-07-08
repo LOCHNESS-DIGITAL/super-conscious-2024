@@ -12,7 +12,7 @@ $emails = $global_options['contact_email_addresses'];
                 <?php endforeach; ?>
             </ul>     
             <div class="footer__since">Since 2016.</div>
-            <div class="footer__copyright">&copy;<?php echo date('Y'); ?> Relative&reg;</div>
+            <div class="footer__copyright">&copy;<?php echo date('Y'); ?> Super Conscious&reg;</div>
         </div>
         <div class="footer__skull"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/images/website-wrkn-004.png'; ?>" alt="" /></a></div>
     </div>

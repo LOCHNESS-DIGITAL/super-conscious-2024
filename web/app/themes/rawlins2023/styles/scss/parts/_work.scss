@@ -1,6 +1,6 @@
 .work__item {
     padding: 20px 0 40px;
-    border-top: 1px dotted #000;
+    border-top: 1px dashed #000;
     position: relative;
     
     &:before {
@@ -23,6 +23,12 @@
 
     @media screen and (max-width: 1200px) {
         flex-direction: column;
+
+        > * {
+            &:not(:last-child) {
+                margin-bottom: rem(20px);
+            }
+        }
     }
 }
 
@@ -37,9 +43,15 @@
     align-items: flex-start;
     max-width: 220px;
     width: 100%;
+    margin-right: 200px;
+
+    @media screen and (max-width: 1400px) {
+        margin-right: 100px;
+    }
 
     @media screen and (max-width: 1200px) {
         max-width: 100%;
+        margin-right: 0;
     }
 
     h2 {
@@ -51,17 +63,21 @@
 }
 
 .work__item__description {
-    width: 262px;
+    width: 366px;
     max-width: 100%;
     @include ft();
-    font-size: rem(14px);
+    font-size: rem(13px);
 }
 
 .work__item__terms {
     font-size: 0;
     width: rem(520px);
     max-width: 100%;
-    margin-left: rem(70px);
+    margin-left: 200px;
+
+    @media screen and (max-width: 1400px) {
+        margin-left: 100px;
+    }
 
     @media screen and (max-width: 1200px) {
         margin-left: 0;
@@ -223,7 +239,7 @@
     text-transform: uppercase;
 
     @media screen and (max-width: 1200px) {
-        &:first-child() {
+        &:first-child {
             margin-left: 0;
         }
     }

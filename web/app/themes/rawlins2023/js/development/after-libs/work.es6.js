@@ -1,6 +1,6 @@
 
 import { HoverSlider } from './splide-extension-hover-slider.js';
-const { AutoScroll, HoverSlider } = window.splide.Extensions;
+const { AutoScroll } = window.splide.Extensions;
 $(window).on('load', function(){
 
     $('body').removeClass('loading');

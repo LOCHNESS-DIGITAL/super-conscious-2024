@@ -136,11 +136,6 @@ get_header();
                                                 <div class="work__flyout__metrics-item">Before</div>
                                                 <div class="work__flyout__metrics-item">After</div>
                                             </div>
-                                            <div class="work__flyout__metrics-row">
-                                                <div class="work__flyout__metrics-item"></div>
-                                                <div class="work__flyout__metrics-item"></div>
-                                                <div class="work__flyout__metrics-item"></div>
-                                            </div>
                                             <?php foreach ( $metrics as $metric ) : ?>
                                                 <div class="work__flyout__metrics-row">
                                                     <div class="work__flyout__metrics-item"><?php echo $metric['metric_name']; ?></div>

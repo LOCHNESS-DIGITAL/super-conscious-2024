@@ -14,7 +14,7 @@
 .intro__description {
     @include ft();
     max-width: rem(444px);
-    font-size: rem(14px);
+    font-size: rem(13px);
     line-height: rem(18px);
 
     @media screen and (max-width: 1400px) {
@@ -28,9 +28,13 @@
 .intro__capabilities {
     width: 414px;
     max-width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    display: none;
 
     @media screen and (max-width: 1400px) {
         margin-top: rem(40px);
+        display: none;
     }
 
     h3,
