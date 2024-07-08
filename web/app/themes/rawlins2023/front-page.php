@@ -68,9 +68,9 @@ get_header();
                                     <?php endif; */ ?>
                                     <h2><?php the_title(); ?></h2>
                                 </div>
-                                <?php if ( $description ): ?>
-                                    <div class="work__item__description"><?php echo $description; ?></div>
-                                <?php endif; ?>
+                                
+                                <div class="work__item__description"><?php echo $description; ?></div>
+                                
                                 <?php if ( !empty($terms) ): ?>
                                     <ul class="work__item__terms">
                                         <?php foreach ( $terms as $term ): ?>
