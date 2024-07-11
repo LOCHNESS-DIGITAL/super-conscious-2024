@@ -1381,7 +1381,14 @@ body.flyout-active:before {
 
 .coming-soon .header__logo {
   text-align: center;
+  width: auto;
   margin-bottom: 20px;
+}
+
+.coming-soon .header__logo img {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .coming-soon .post-password-form p:first-child, .coming-soon input[type="submit"] {
