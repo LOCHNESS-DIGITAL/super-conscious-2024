@@ -13,14 +13,14 @@
 
 .intro__description {
     @include ft();
-    width: rem(444px);
+    width: 31%;
     max-width: 100%;
-    font-size: rem(13px);
+    font-size: 1.2rem;
     line-height: rem(18px);
-    margin-right: 10%;
+    margin-right: 80px;
 
-    @media screen and (max-width: 1400px) {
-        width: rem(444px);
+    @media screen and (max-width: 1200px) {
+        width: 43rem;
         max-width: 100%;
         margin-top: rem(111px);
         margin-right: 0;

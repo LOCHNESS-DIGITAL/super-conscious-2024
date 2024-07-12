@@ -570,8 +570,11 @@ $(window).on("load", function() {
             // mediaQuery: 'min',
             breakpoints: {
                 980: {
-                    height: "253px",
+                    height: "243px",
                     perPage: 4
+                },
+                768: {
+                    perPage: 1
                 }
             }
         });
