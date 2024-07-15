@@ -2,7 +2,7 @@
 $global_options = get_field('global_options', 'option');
 $emails = $global_options['contact_email_addresses'];
 ?>
-
+<?php if ( !post_password_required( $post ) ): ?>
 <footer class="footer">
     <div class="footer__inner l-container">
         <div class="footer__content">
@@ -30,7 +30,7 @@ $emails = $global_options['contact_email_addresses'];
         </div>
     </div>
 </section>
-
+<?php endif; ?>
 <?php wp_footer(); ?>
 
 </body>
