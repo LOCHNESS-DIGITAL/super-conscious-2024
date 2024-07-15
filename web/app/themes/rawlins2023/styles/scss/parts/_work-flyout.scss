@@ -37,6 +37,10 @@ body.flyout-active {
     &.work__flyout--active {
         transform: translate3d(-100%,0,0);
     }
+
+    .work__item__terms {
+        width: 100%;
+    }
 }
 
 .work__flyout__close {

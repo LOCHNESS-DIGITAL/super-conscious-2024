@@ -148,6 +148,7 @@
 
 .work__item__image {
     overflow: hidden;
+    object-fit: cover;
 
     &:not(:last-child) {
         margin-right: rem(12px);
@@ -157,7 +158,6 @@
         width: auto;
         height: 387px;
         vertical-align: auto !important;
-        object-fit: cover;
         width: 100%;
         height: 100%;
     }
