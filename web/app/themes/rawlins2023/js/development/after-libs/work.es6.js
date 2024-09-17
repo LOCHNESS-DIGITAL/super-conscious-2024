@@ -130,7 +130,8 @@ function aspectRatios() {
     videos.forEach(function(e){
         let videoWidth = e.videoWidth;
         let videoHeight = e.videoHeight;
-
-        e.parentElement.style.aspectRatio = videoWidth +'/'+ videoHeight;
+        while (videoWidth === 0) {
+            e.parentElement.style.aspectRatio = videoWidth +'/'+ videoHeight;
+        }
     })
 }
