@@ -93,21 +93,27 @@ get_header();
                             <div class="work__item__images work__item__row splide" aria-label="Splide Basic HTML Example">
                                 <div class="splide__track">
                                     <div class="splide__list">
-                                        <?php foreach ( $images as $image ) : ?>
-                                            <div class="work__item__image splide__slide">
-                                                <?php if ( $image['type'] == 'image' ) : ?>
-                                                    <?php if($image['subtype'] == 'gif'): ?>
-                                                        <img data-src="<?php echo $image['url']; ?>" src="<?php echo $image['url']; ?>" alt="">
+                                        <?php if($images): ?>
+                                            <?php foreach ( $images as $image ) : ?>
+                                                <div class="work__item__image splide__slide">
+                                                    <?php if ( $image['type'] == 'image' ) : ?>
+                                                        <?php if($image['subtype'] == 'gif'): ?>
+                                                            <img data-src="<?php echo $image['url']; ?>" src="<?php echo $image['url']; ?>" alt="">
+                                                        <?php else: ?>
+                                                            <img data-src="<?php echo $image['url']; ?>" src="<?php echo $image['sizes']['work-thumbnail']; ?>" alt="">
+                                                        <?php endif; ?>
                                                     <?php else: ?>
-                                                        <img data-src="<?php echo $image['url']; ?>" src="<?php echo $image['sizes']['work-thumbnail']; ?>" alt="">
+                                                        <div class="work__item__video">
+                                                            <video src="<?php echo $image['url']; ?>" autoplay muted playsinline loop></video>
+                                                            <?php if ( get_field( 'has_audio', $image['id'] ) ): ?>
+                                                                <div class="work__item__video__volume-up"><?php echo file_get_contents(get_stylesheet_directory() . '/images/icon__volume-up.svg'); ?></div>
+                                                                <div class="work__item__video__volume-down active"><?php echo file_get_contents(get_stylesheet_directory() . '/images/icon__volume.svg'); ?></div>
+                                                            <?php endif; ?>
+                                                        </div>
                                                     <?php endif; ?>
-                                                <?php else: ?>
-                                                    <div class="work__item__video">
-                                                        <video src="<?php echo $image['url']; ?>" autoplay muted playsinline loop></video>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
-                                        <?php endforeach; ?>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>

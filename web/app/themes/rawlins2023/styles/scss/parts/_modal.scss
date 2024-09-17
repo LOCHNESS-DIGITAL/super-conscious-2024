@@ -116,9 +116,11 @@
     height: 100% !important;
     display: flex;
     align-items: center;
+    pointer-events: none;
 
     &.modal__image--active {
         opacity: 1;
+        pointer-events: inherit;
     }
     
     img {
@@ -131,6 +133,15 @@
             height: auto;
             width: 80%;
             margin: 0 auto;
+        }
+    }
+
+    .work__item__video__volume-up,
+    .work__item__video__volume-down {
+        display: block;
+        &.active {
+            opacity: 1;
+            pointer-events: inherit;
         }
     }
 }

@@ -40,7 +40,8 @@
     "wpackagist-plugin/update-urls": "*",
     "wpackagist-plugin/regenerate-thumbnails": "*",
     "wpackagist-plugin/thumbnail-editor": "*",
-    "wpackagist-plugin/classic-editor": "*"
+    "wpackagist-plugin/classic-editor": "*",
+    "wpackagist-plugin/wp-smushit": "^3.16"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.1",

@@ -4,6 +4,7 @@ const { AutoScroll } = window.splide.Extensions;
 $(window).on('load', function(){
 
     $('body').removeClass('loading');
+    aspectRatios();
 
     var elms = document.getElementsByClassName( 'splide' );
 
@@ -83,6 +84,21 @@ $(window).on('load', function(){
         });
     }
 
+    $(document).on('click', '.work__item__video__volume-up',function(){
+        const video = $(this).prev('video');
+        $(this).removeClass('active');
+        video[0].muted = !video[0].muted;
+        $(this).next().addClass('active');
+    })
+
+    $(document).on('click', '.work__item__video__volume-down',function(){
+        const video = $(this).prev().prev('video');
+        console.log(video);
+        $(this).removeClass('active');
+        video[0].muted = !video[0].muted;
+        $(this).prev().addClass('active');
+    })
+
     // Work Flyout
     document.querySelectorAll('.work__item__link--more-info a').forEach(function(item, idx) {
         item.addEventListener('click', function(e) {
@@ -105,5 +121,16 @@ function closeWorkFlyout() {
     document.body.classList.remove('flyout-active');
     document.querySelectorAll('.work__flyout').forEach(function(workFlyout, idx) {
         workFlyout.classList.remove('work__flyout--active');
+    })
+}
+
+function aspectRatios() {
+    const videos = document.querySelectorAll('.work__item__video video');
+
+    videos.forEach(function(e){
+        let videoWidth = e.videoWidth;
+        let videoHeight = e.videoHeight;
+
+        e.parentElement.style.aspectRatio = videoWidth +'/'+ videoHeight;
     })
 }
