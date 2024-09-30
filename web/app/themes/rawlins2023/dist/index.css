@@ -209,6 +209,15 @@ body {
   line-height: 1.3;
 }
 
+body .site-container > :not(.icon-loading) {
+  opacity: 1;
+  transition: opacity .25s;
+}
+
+body.loading .site-container > :not(.icon-loading) {
+  opacity: 0;
+}
+
 body.loading .icon-loading {
   opacity: .8;
   pointer-events: inherit;

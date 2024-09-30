@@ -36,9 +36,18 @@ global $post;
 <body <?php body_class('loading'); ?>>
 <?php if ( !post_password_required( $post ) ): ?>
   <div class="site-container">
-    <div class="icon-loading">
-      <img src="<?php echo get_stylesheet_directory_uri() . '/images/icon__loading.gif'; ?>" alt="">
-    </div>
+    <?php if ( is_front_page() ) : ?>
+      <div class="icon-loading">
+        <?php 
+        $loading_gif = get_stylesheet_directory_uri() . '/images/icon__loading.gif';
+        if ( get_field( 'loading-gif', 'option' ) ) {
+          $loading_gif = get_field( 'loading-gif', 'option');
+          $loading_gif = $loading_gif['url'];
+        }
+        ?>
+        <img src="<?php echo $loading_gif; ?>" alt="">
+      </div>
+    <?php endif; ?>
 
     <header class="header">
       <div class="header__inner l-container">

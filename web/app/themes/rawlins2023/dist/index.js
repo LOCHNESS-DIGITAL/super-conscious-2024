@@ -541,100 +541,107 @@ var _pwProtectionJs = require("../js/development/after-libs/pw-protection.js");
 var _splideExtensionHoverSliderJs = require("./splide-extension-hover-slider.js");
 const { AutoScroll  } = window.splide.Extensions;
 $(window).on("load", function() {
-    $("body").removeClass("loading");
-    aspectRatios();
-    var elms = document.getElementsByClassName("splide");
-    for(var i = 0; i < elms.length; i++){
-        const splide = new Splide(elms[i], {
-            type: "loop",
-            drag: "free",
-            snap: true,
-            perPage: 6,
-            autoWidth: true,
-            height: "387px",
-            waitForTransition: true,
-            pagination: false,
-            cloneStatus: false,
-            slideFocus: false,
-            pauseOnHover: false,
-            omitEnd: true,
-            live: false,
-            updateOnMove: false,
-            focus: false,
-            pauseOnFocus: false,
-            lazyLoad: true,
-            autoScroll: {
-                speed: .5,
+    setTimeout(function() {
+        if ($(".icon-loading").length) {
+            $(".icon-loading img").fadeOut(300);
+            $("body").removeClass("loading");
+        }
+    }, 2000);
+    setTimeout(function() {
+        aspectRatios();
+        var elms = document.getElementsByClassName("splide");
+        for(var i = 0; i < elms.length; i++){
+            const splide = new Splide(elms[i], {
+                type: "loop",
+                drag: "free",
+                snap: true,
+                perPage: 6,
+                autoWidth: true,
+                height: "387px",
+                waitForTransition: true,
+                pagination: false,
+                cloneStatus: false,
+                slideFocus: false,
                 pauseOnHover: false,
-                autoStart: false
-            },
-            // mediaQuery: 'min',
-            breakpoints: {
-                980: {
-                    height: "243px",
-                    perPage: 4
+                omitEnd: true,
+                live: false,
+                updateOnMove: false,
+                focus: false,
+                pauseOnFocus: false,
+                lazyLoad: true,
+                autoScroll: {
+                    speed: .5,
+                    pauseOnHover: false,
+                    autoStart: false
                 },
-                768: {
-                    perPage: 1
+                // mediaQuery: 'min',
+                breakpoints: {
+                    980: {
+                        height: "243px",
+                        perPage: 4
+                    },
+                    768: {
+                        perPage: 1
+                    }
                 }
-            }
-        });
-        splide_init(splide);
-        splide.on("drag", function() {
-            $(".work__item__images").addClass("dragging");
-            $(".work__item__image").removeClass("hover");
-        });
-        splide.on("dragged", function() {
-            $(".work__item__images").removeClass("dragging");
-        });
-        $(window).on("resize", function() {
-            splide.destroy();
-            splide_init(splide);
-        });
-        function splide_init(splide) {
-            if (window.innerWidth >= 980) splide.mount({
-                AutoScroll,
-                HoverSlider: (0, _splideExtensionHoverSliderJs.HoverSlider)
             });
-            else splide.mount({
-                HoverSlider: (0, _splideExtensionHoverSliderJs.HoverSlider)
+            splide_init(splide);
+            splide.on("drag", function() {
+                $(".work__item__images").addClass("dragging");
+                $(".work__item__image").removeClass("hover");
+            });
+            splide.on("dragged", function() {
+                $(".work__item__images").removeClass("dragging");
+            });
+            $(window).on("resize", function() {
+                splide.destroy();
+                splide_init(splide);
+            });
+            function splide_init(splide) {
+                if (window.innerWidth >= 980) splide.mount({
+                    AutoScroll,
+                    HoverSlider: (0, _splideExtensionHoverSliderJs.HoverSlider)
+                });
+                else splide.mount({
+                    HoverSlider: (0, _splideExtensionHoverSliderJs.HoverSlider)
+                });
+            }
+            document.querySelectorAll(".work__item__image").forEach(function(item, idx) {
+                item.addEventListener("mouseenter", function() {
+                    this.classList.add("hover");
+                });
+                item.addEventListener("mouseleave", function() {
+                    this.classList.remove("hover");
+                });
             });
         }
-        document.querySelectorAll(".work__item__image").forEach(function(item, idx) {
-            item.addEventListener("mouseenter", function() {
-                this.classList.add("hover");
-            });
-            item.addEventListener("mouseleave", function() {
-                this.classList.remove("hover");
+        $(document).on("click", ".work__item__video__volume-up", function() {
+            const video = $(this).prev("video");
+            $(this).removeClass("active");
+            video[0].muted = !video[0].muted;
+            $(this).next().addClass("active");
+        });
+        $(document).on("click", ".work__item__video__volume-down", function() {
+            const video = $(this).prev().prev("video");
+            console.log(video);
+            $(this).removeClass("active");
+            video[0].muted = !video[0].muted;
+            $(this).prev().addClass("active");
+        });
+        // Work Flyout
+        document.querySelectorAll(".work__item__link--more-info a").forEach(function(item, idx) {
+            item.addEventListener("click", function(e) {
+                const flyoutID = this.hash;
+                e.preventDefault();
+                closeWorkFlyout();
+                document.body.classList.add("flyout-active");
+                document.querySelector(flyoutID).classList.add("work__flyout--active");
             });
         });
-    }
-    $(document).on("click", ".work__item__video__volume-up", function() {
-        const video = $(this).prev("video");
-        $(this).removeClass("active");
-        video[0].muted = !video[0].muted;
-        $(this).next().addClass("active");
-    });
-    $(document).on("click", ".work__item__video__volume-down", function() {
-        const video = $(this).prev().prev("video");
-        console.log(video);
-        $(this).removeClass("active");
-        video[0].muted = !video[0].muted;
-        $(this).prev().addClass("active");
-    });
-    // Work Flyout
-    document.querySelectorAll(".work__item__link--more-info a").forEach(function(item, idx) {
-        item.addEventListener("click", function(e) {
-            const flyoutID = this.hash;
-            e.preventDefault();
-            closeWorkFlyout();
-            document.body.classList.add("flyout-active");
-            document.querySelector(flyoutID).classList.add("work__flyout--active");
+        document.querySelectorAll(".work__flyout__close").forEach(function(closeButton, idx) {
+            closeButton.addEventListener("click", closeWorkFlyout);
         });
-    });
-    document.querySelectorAll(".work__flyout__close").forEach(function(closeButton, idx) {
-        closeButton.addEventListener("click", closeWorkFlyout);
-    });
+    }, 2500);
 });
 function closeWorkFlyout() {
     document.body.classList.remove("flyout-active");
