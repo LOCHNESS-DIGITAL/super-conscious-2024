@@ -55,7 +55,9 @@ function next() {
   } else {
     $(activeItem).next().addClass('modal__image--active')
   }
-  $('.modal .modal__image--active video')[0].muted = !$('.modal .modal__image--active video')[0].muted;
+  if($('.modal .modal__image--active video').length){
+    $('.modal .modal__image--active video')[0].muted = !$('.modal .modal__image--active video')[0].muted;
+  }
 }
 
 function prev() {
@@ -85,7 +87,10 @@ function open(image) {
   $('.modal__image').eq(activeSlideNumber - 1).addClass('modal__image--active');
   image.addClass('work__item__image--in-view');
   $('.modal').addClass('modal--active');
-  $('.modal .modal__image--active video')[0].muted = !$('.modal .modal__image--active video')[0].muted;
+
+  if($('.modal .modal__image--active video').length){
+    $('.modal .modal__image--active video')[0].muted = !$('.modal .modal__image--active video')[0].muted;
+  }
 }
 
 function close() {

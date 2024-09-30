@@ -895,8 +895,6 @@ img {
 }
 
 .work__item__images {
-  opacity: 0;
-  transition: opacity .25s;
   position: relative;
   visibility: visible !important;
 }
@@ -927,7 +925,7 @@ img {
   }
 }
 
-.work__item__images.is-initialized {
+.work__item__images.is-initialized .work__item__image img, .work__item__images.is-initialized .work__item__image .work__item__video {
   opacity: 1;
 }
 
@@ -951,9 +949,327 @@ img {
   margin-right: 1rem;
 }
 
+.work__item__image:not(.splide__slide--clone):nth-child(1) img, .work__item__image:not(.splide__slide--clone):nth-child(1) .work__item__video {
+  transition-delay: .15s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(2) img, .work__item__image:not(.splide__slide--clone):nth-child(2) .work__item__video {
+  transition-delay: .3s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(3) img, .work__item__image:not(.splide__slide--clone):nth-child(3) .work__item__video {
+  transition-delay: .45s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(4) img, .work__item__image:not(.splide__slide--clone):nth-child(4) .work__item__video {
+  transition-delay: .6s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(5) img, .work__item__image:not(.splide__slide--clone):nth-child(5) .work__item__video {
+  transition-delay: .75s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(6) img, .work__item__image:not(.splide__slide--clone):nth-child(6) .work__item__video {
+  transition-delay: .9s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(7) img, .work__item__image:not(.splide__slide--clone):nth-child(7) .work__item__video {
+  transition-delay: 1.05s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(8) img, .work__item__image:not(.splide__slide--clone):nth-child(8) .work__item__video {
+  transition-delay: 1.2s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(9) img, .work__item__image:not(.splide__slide--clone):nth-child(9) .work__item__video {
+  transition-delay: 1.35s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(10) img, .work__item__image:not(.splide__slide--clone):nth-child(10) .work__item__video {
+  transition-delay: 1.5s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(11) img, .work__item__image:not(.splide__slide--clone):nth-child(11) .work__item__video {
+  transition-delay: 1.65s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(12) img, .work__item__image:not(.splide__slide--clone):nth-child(12) .work__item__video {
+  transition-delay: 1.8s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(13) img, .work__item__image:not(.splide__slide--clone):nth-child(13) .work__item__video {
+  transition-delay: 1.95s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(14) img, .work__item__image:not(.splide__slide--clone):nth-child(14) .work__item__video {
+  transition-delay: 2.1s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(15) img, .work__item__image:not(.splide__slide--clone):nth-child(15) .work__item__video {
+  transition-delay: 2.25s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(16) img, .work__item__image:not(.splide__slide--clone):nth-child(16) .work__item__video {
+  transition-delay: 2.4s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(17) img, .work__item__image:not(.splide__slide--clone):nth-child(17) .work__item__video {
+  transition-delay: 2.55s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(18) img, .work__item__image:not(.splide__slide--clone):nth-child(18) .work__item__video {
+  transition-delay: 2.7s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(19) img, .work__item__image:not(.splide__slide--clone):nth-child(19) .work__item__video {
+  transition-delay: 2.85s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(20) img, .work__item__image:not(.splide__slide--clone):nth-child(20) .work__item__video {
+  transition-delay: 3s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(21) img, .work__item__image:not(.splide__slide--clone):nth-child(21) .work__item__video {
+  transition-delay: 3.15s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(22) img, .work__item__image:not(.splide__slide--clone):nth-child(22) .work__item__video {
+  transition-delay: 3.3s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(23) img, .work__item__image:not(.splide__slide--clone):nth-child(23) .work__item__video {
+  transition-delay: 3.45s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(24) img, .work__item__image:not(.splide__slide--clone):nth-child(24) .work__item__video {
+  transition-delay: 3.6s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(25) img, .work__item__image:not(.splide__slide--clone):nth-child(25) .work__item__video {
+  transition-delay: 3.75s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(26) img, .work__item__image:not(.splide__slide--clone):nth-child(26) .work__item__video {
+  transition-delay: 3.9s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(27) img, .work__item__image:not(.splide__slide--clone):nth-child(27) .work__item__video {
+  transition-delay: 4.05s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(28) img, .work__item__image:not(.splide__slide--clone):nth-child(28) .work__item__video {
+  transition-delay: 4.2s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(29) img, .work__item__image:not(.splide__slide--clone):nth-child(29) .work__item__video {
+  transition-delay: 4.35s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(30) img, .work__item__image:not(.splide__slide--clone):nth-child(30) .work__item__video {
+  transition-delay: 4.5s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(31) img, .work__item__image:not(.splide__slide--clone):nth-child(31) .work__item__video {
+  transition-delay: 4.65s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(32) img, .work__item__image:not(.splide__slide--clone):nth-child(32) .work__item__video {
+  transition-delay: 4.8s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(33) img, .work__item__image:not(.splide__slide--clone):nth-child(33) .work__item__video {
+  transition-delay: 4.95s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(34) img, .work__item__image:not(.splide__slide--clone):nth-child(34) .work__item__video {
+  transition-delay: 5.1s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(35) img, .work__item__image:not(.splide__slide--clone):nth-child(35) .work__item__video {
+  transition-delay: 5.25s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(36) img, .work__item__image:not(.splide__slide--clone):nth-child(36) .work__item__video {
+  transition-delay: 5.4s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(37) img, .work__item__image:not(.splide__slide--clone):nth-child(37) .work__item__video {
+  transition-delay: 5.55s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(38) img, .work__item__image:not(.splide__slide--clone):nth-child(38) .work__item__video {
+  transition-delay: 5.7s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(39) img, .work__item__image:not(.splide__slide--clone):nth-child(39) .work__item__video {
+  transition-delay: 5.85s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(40) img, .work__item__image:not(.splide__slide--clone):nth-child(40) .work__item__video {
+  transition-delay: 6s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(41) img, .work__item__image:not(.splide__slide--clone):nth-child(41) .work__item__video {
+  transition-delay: 6.15s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(42) img, .work__item__image:not(.splide__slide--clone):nth-child(42) .work__item__video {
+  transition-delay: 6.3s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(43) img, .work__item__image:not(.splide__slide--clone):nth-child(43) .work__item__video {
+  transition-delay: 6.45s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(44) img, .work__item__image:not(.splide__slide--clone):nth-child(44) .work__item__video {
+  transition-delay: 6.6s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(45) img, .work__item__image:not(.splide__slide--clone):nth-child(45) .work__item__video {
+  transition-delay: 6.75s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(46) img, .work__item__image:not(.splide__slide--clone):nth-child(46) .work__item__video {
+  transition-delay: 6.9s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(47) img, .work__item__image:not(.splide__slide--clone):nth-child(47) .work__item__video {
+  transition-delay: 7.05s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(48) img, .work__item__image:not(.splide__slide--clone):nth-child(48) .work__item__video {
+  transition-delay: 7.2s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(49) img, .work__item__image:not(.splide__slide--clone):nth-child(49) .work__item__video {
+  transition-delay: 7.35s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(50) img, .work__item__image:not(.splide__slide--clone):nth-child(50) .work__item__video {
+  transition-delay: 7.5s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(51) img, .work__item__image:not(.splide__slide--clone):nth-child(51) .work__item__video {
+  transition-delay: 7.65s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(52) img, .work__item__image:not(.splide__slide--clone):nth-child(52) .work__item__video {
+  transition-delay: 7.8s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(53) img, .work__item__image:not(.splide__slide--clone):nth-child(53) .work__item__video {
+  transition-delay: 7.95s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(54) img, .work__item__image:not(.splide__slide--clone):nth-child(54) .work__item__video {
+  transition-delay: 8.1s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(55) img, .work__item__image:not(.splide__slide--clone):nth-child(55) .work__item__video {
+  transition-delay: 8.25s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(56) img, .work__item__image:not(.splide__slide--clone):nth-child(56) .work__item__video {
+  transition-delay: 8.4s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(57) img, .work__item__image:not(.splide__slide--clone):nth-child(57) .work__item__video {
+  transition-delay: 8.55s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(58) img, .work__item__image:not(.splide__slide--clone):nth-child(58) .work__item__video {
+  transition-delay: 8.7s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(59) img, .work__item__image:not(.splide__slide--clone):nth-child(59) .work__item__video {
+  transition-delay: 8.85s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(60) img, .work__item__image:not(.splide__slide--clone):nth-child(60) .work__item__video {
+  transition-delay: 9s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(61) img, .work__item__image:not(.splide__slide--clone):nth-child(61) .work__item__video {
+  transition-delay: 9.15s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(62) img, .work__item__image:not(.splide__slide--clone):nth-child(62) .work__item__video {
+  transition-delay: 9.3s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(63) img, .work__item__image:not(.splide__slide--clone):nth-child(63) .work__item__video {
+  transition-delay: 9.45s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(64) img, .work__item__image:not(.splide__slide--clone):nth-child(64) .work__item__video {
+  transition-delay: 9.6s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(65) img, .work__item__image:not(.splide__slide--clone):nth-child(65) .work__item__video {
+  transition-delay: 9.75s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(66) img, .work__item__image:not(.splide__slide--clone):nth-child(66) .work__item__video {
+  transition-delay: 9.9s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(67) img, .work__item__image:not(.splide__slide--clone):nth-child(67) .work__item__video {
+  transition-delay: 10.05s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(68) img, .work__item__image:not(.splide__slide--clone):nth-child(68) .work__item__video {
+  transition-delay: 10.2s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(69) img, .work__item__image:not(.splide__slide--clone):nth-child(69) .work__item__video {
+  transition-delay: 10.35s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(70) img, .work__item__image:not(.splide__slide--clone):nth-child(70) .work__item__video {
+  transition-delay: 10.5s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(71) img, .work__item__image:not(.splide__slide--clone):nth-child(71) .work__item__video {
+  transition-delay: 10.65s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(72) img, .work__item__image:not(.splide__slide--clone):nth-child(72) .work__item__video {
+  transition-delay: 10.8s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(73) img, .work__item__image:not(.splide__slide--clone):nth-child(73) .work__item__video {
+  transition-delay: 10.95s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(74) img, .work__item__image:not(.splide__slide--clone):nth-child(74) .work__item__video {
+  transition-delay: 11.1s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(75) img, .work__item__image:not(.splide__slide--clone):nth-child(75) .work__item__video {
+  transition-delay: 11.25s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(76) img, .work__item__image:not(.splide__slide--clone):nth-child(76) .work__item__video {
+  transition-delay: 11.4s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(77) img, .work__item__image:not(.splide__slide--clone):nth-child(77) .work__item__video {
+  transition-delay: 11.55s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(78) img, .work__item__image:not(.splide__slide--clone):nth-child(78) .work__item__video {
+  transition-delay: 11.7s;
+}
+
+.work__item__image:not(.splide__slide--clone):nth-child(79) img, .work__item__image:not(.splide__slide--clone):nth-child(79) .work__item__video {
+  transition-delay: 11.85s;
+}
+
 .work__item__image img {
   width: auto;
   height: 387px;
+  opacity: 0;
+  transition: opacity 1.25s;
   vertical-align: auto !important;
 }
 
@@ -1004,6 +1320,8 @@ img {
 .work__item__video {
   height: 100%;
   width: auto;
+  opacity: 0;
+  transition: opacity 1.25s;
   position: relative;
 }
 
