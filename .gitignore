@@ -11,6 +11,10 @@ web/app/cache/*
 web/app/themes/rawlins2023/.parcel-cache
 *.sql
 
+# Node
+node_modules
+web/app/themes/*/node_modules
+
 # WordPress
 web/wp
 web/.htaccess
