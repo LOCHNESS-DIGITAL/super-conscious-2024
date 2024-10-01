@@ -161,12 +161,12 @@
     }
 
     &:not(.splide__slide--clone) {
-        $i: 0;
+        $i: 1;
         @for $i from 1 to 80 {
             &:nth-child(#{$i}) {
                 img,
                 .work__item__video {
-                    transition-delay: $i * 0.15s;
+                    transition-delay: $i * 0.05s;
                 }
             }
         }

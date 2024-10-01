@@ -7,7 +7,7 @@ $(window).on('load', function(){
             $('.icon-loading img').fadeOut(300);
             $('body').removeClass('loading');
         }
-    }, 2000)
+    }, 1000)
     
     aspectRatios();
 

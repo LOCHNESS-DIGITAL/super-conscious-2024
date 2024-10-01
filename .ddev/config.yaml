@@ -21,7 +21,7 @@ hooks:
     - exec: |
         cd /var/www/html/web/app/themes/rawlins2023 && \
         npm ci && \
-        pm2 start npm --name "super-conscious" -- run start || pm2 restart "super-conscious"
+        pm2 monit npm --name "super-conscious" -- run start || pm2 restart "super-conscious"
       service: web
   pre-stop:
     - exec: "pm2 stop all"
