@@ -166,7 +166,7 @@
             &:nth-child(#{$i}) {
                 img,
                 .work__item__video {
-                    transition-delay: $i * 0.05s;
+                    transition-delay: $i * 0.03s;
                 }
             }
         }
