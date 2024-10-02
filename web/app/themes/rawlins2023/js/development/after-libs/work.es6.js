@@ -1,13 +1,22 @@
 
 import { HoverSlider } from './splide-extension-hover-slider.js';
 const { AutoScroll } = window.splide.Extensions;
+
 $(window).on('load', function(){
-    setTimeout(function(){
-        if($('.icon-loading').length) {
-            $('.icon-loading img').fadeOut(300);
-            $('body').removeClass('loading');
-        }
-    }, 1000)
+
+    // Check if the user has visited the site before
+    if (getCookie('firstVisit') !== 'true' && !$('.coming-soon').length) {
+        // Set a cookie to indicate that the user has visited the site
+        setCookie('firstVisit', 'true', 2); // Cookie expires in 1 year
+        
+        setTimeout(function(){
+            if($('.icon-loading').length) {
+                $('.icon-loading img').fadeOut(300);
+                $('body').removeClass('loading');
+            }
+        }, 1000)
+    }
+    
     
     aspectRatios();
 
@@ -163,3 +172,20 @@ function aspectRatios() {
         e.parentElement.style.aspectRatio = videoWidth +'/'+ videoHeight;
     })
 }
+
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+  }
+  
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith(name + '=')) {
+        return decodeURIComponent(cookie.substring(name.length + 1));
+      }
+    }
+    return null;
+  }

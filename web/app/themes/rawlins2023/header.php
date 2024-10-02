@@ -33,10 +33,11 @@ global $post;
   $work_query = new WP_Query( $args );
   ?>
 </head>
-<body <?php body_class('loading'); ?>>
+
+<body <?php if ( !isset($_COOKIE['firstVisit']) ) { body_class('loading'); } ?>>
 <?php if ( !post_password_required( $post ) ): ?>
   <div class="site-container">
-    <?php if ( is_front_page() ) : ?>
+    <?php if ( !isset($_COOKIE['firstVisit']) ) : ?>
       <div class="icon-loading">
         <?php 
         $loading_gif = get_stylesheet_directory_uri() . '/images/icon__loading.gif';
