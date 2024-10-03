@@ -8,9 +8,12 @@
     }
 }
 
-.footer__content {
+.footer__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     border-top: 1px solid black;
-    padding-top: 10px;
+    padding-top: 30px;
 }
 
 .footer__since,
@@ -19,7 +22,6 @@
 }
 
 .footer__skull {
-    margin-top: 60px;
 
     img {
         width: 56px;
