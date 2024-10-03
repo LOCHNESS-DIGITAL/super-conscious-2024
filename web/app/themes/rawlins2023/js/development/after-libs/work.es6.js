@@ -15,7 +15,6 @@ $(window).on('load', function(){
         }
     }
     
-    
     aspectRatios();
 
     var elms = document.getElementsByClassName( 'splide' );

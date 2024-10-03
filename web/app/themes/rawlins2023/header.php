@@ -21,6 +21,7 @@ global $post;
 	<?php wp_head(); ?>
 
   <?php
+  $global_options = get_field('global_options', 'option');
   $homepage_group = get_field('homepage', 'option');
   $intro_description = $homepage_group['intro_description'];
   // $capabilities = $homepage_group['capabilities'];
@@ -31,6 +32,18 @@ global $post;
       'orderby' => 'menu_order'
   );
   $work_query = new WP_Query( $args );
+
+  $logo = file_get_contents(get_stylesheet_directory() . '/images/super-conscious-logo-2024.svg');
+  if ( $global_options['logo'] ) {
+    $logo = $global_options['logo'];
+    $logo = $logo['url'];
+    $logo = '<img src="'.$logo.'" alt="Super Conscious Logo" />';
+  }
+  $logo_hover = get_stylesheet_directory_uri('/images/logo__hover-state.gif');
+  if ( $global_options['logo_hover_gif'] ) {
+    $logo_hover = $global_options['logo_hover_gif'];
+    $logo_hover = $logo_hover['url'];
+  }
   ?>
 </head>
 
@@ -49,11 +62,23 @@ global $post;
         <img src="<?php echo $loading_gif; ?>" alt="">
       </div>
     <?php endif; ?>
-
+    <nav class="l-navigation">
+      <div class="l-navigation__inner l-container">
+        <ul>
+          <li><a <?php if (!is_page_template( 'template-reel.php' )){ echo 'class="active"'; } ?> href="<?php echo get_home_url(); ?>">Work</a></li>
+          <li><a <?php if (is_page_template( 'template-reel.php' )){ echo 'class="active"'; } ?> href="<?php echo get_home_url(); ?>/reel">Reel</a></li>
+        </ul>
+      </div>
+    </nav>
     <header class="header">
       <div class="header__inner l-container">
         <div class="header__row">
-          <a href="<?php echo get_home_url(); ?>" class="header__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo__hover-state.gif" alt="Super Conscious Studio" /><?php echo file_get_contents(get_stylesheet_directory() . '/images/super-conscious-logo-2024.svg'); ?></a>
+          <div class="header__logo">
+            <a href="<?php echo get_home_url(); ?>"class="header__logo__link">
+              <img class="header__logo--hover" src="<?php echo $logo_hover; ?>" alt="Super Conscious Studio" />
+              <?php echo $logo; ?>
+            </a>
+          </div>
           <div class="intro__description">
               <div class="intro__description__inner">
                   <?php echo $intro_description; ?>
