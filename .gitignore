@@ -10,7 +10,9 @@ web/app/cache/*
 !web/app/mu-plugins/advanced-custom-fields-pro
 web/app/themes/rawlins2023/.parcel-cache
 *.sql
-
+web/app/themes/rawlins2023/dist/*.map
+web/app/themes/rawlins2023/dist/*.js
+web/app/themes/rawlins2023/dist/*.css
 # Node
 node_modules
 web/app/themes/*/node_modules
