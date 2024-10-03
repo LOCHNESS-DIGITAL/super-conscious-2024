@@ -9,14 +9,11 @@ $(window).on('load', function(){
         // Set a cookie to indicate that the user has visited the site
         setCookie('firstVisit', 'true', 2); // Cookie expires in 1 year
         
-        setTimeout(function(){
-            if($('.icon-loading').length) {
-                $('.icon-loading img').fadeOut(300);
-                $('body').removeClass('loading');
-            }
-        }, 1000)
+        if($('.icon-loading').length) {
+            $('.icon-loading img').fadeOut(300);
+            $('body').removeClass('loading');
+        }
     }
-    
     
     aspectRatios();
 
