@@ -1407,7 +1407,15 @@ img {
 
 @media screen and (max-width: 768px) {
   .work__item__links {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+
+  .work__item__links > :last-child {
+    justify-content: flex-end;
+    display: flex;
   }
 }
 
