@@ -97,10 +97,14 @@ get_header();
                                             <?php foreach ( $images as $image ) : ?>
                                                 <div class="work__item__image splide__slide">
                                                     <?php if ( $image['type'] == 'image' ) : ?>
+                                                        <?php
+                                                        $image_src = wp_get_attachment_image_url($image['ID'], 'work-thumbnail');
+                                                        $image_src_set = wp_get_attachment_image_srcset( $image['ID'], 'work-thumbnail' );
+                                                        ?>
                                                         <?php if($image['subtype'] == 'gif'): ?>
-                                                            <img data-src="<?php echo $image['url']; ?>" src="<?php echo $image['url']; ?>" alt="">
+                                                            <img data-src="<?php echo $image['url']; ?>" src="<?php echo $image['url']; ?>"  alt="">
                                                         <?php else: ?>
-                                                            <img data-src="<?php echo $image['url']; ?>" src="<?php echo $image['sizes']['work-thumbnail']; ?>" alt="">
+                                                            <img data-src="<?php echo $image['url']; ?>" src="<?php echo esc_url($image_src) ?>" srcset="<?php echo esc_attr( $image_src_set ); ?>" alt="<?php echo $image['title']; ?>">
                                                         <?php endif; ?>
                                                     <?php else: ?>
                                                         <div class="work__item__video">

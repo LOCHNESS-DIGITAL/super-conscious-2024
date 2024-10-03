@@ -541,10 +541,19 @@ var _pwProtectionJs = require("../js/development/after-libs/pw-protection.js");
 var _splideExtensionHoverSliderJs = require("./splide-extension-hover-slider.js");
 const { AutoScroll  } = window.splide.Extensions;
 $(window).on("load", function() {
-    $("body").removeClass("loading");
+    // Check if the user has visited the site before
+    if (getCookie("firstVisit") !== "true" && !$(".coming-soon").length) {
+        // Set a cookie to indicate that the user has visited the site
+        setCookie("firstVisit", "true", 2); // Cookie expires in 1 year
+        if ($(".icon-loading").length) {
+            $(".icon-loading img").fadeOut(300);
+            $("body").removeClass("loading");
+        }
+    }
     aspectRatios();
     var elms = document.getElementsByClassName("splide");
     for(var i = 0; i < elms.length; i++){
+        const currentItem = elms[i];
         const splide = new Splide(elms[i], {
             type: "loop",
             drag: "free",
@@ -562,7 +571,7 @@ $(window).on("load", function() {
             updateOnMove: false,
             focus: false,
             pauseOnFocus: false,
-            lazyLoad: true,
+            lazyLoad: false,
             autoScroll: {
                 speed: .5,
                 pauseOnHover: false,
@@ -579,13 +588,17 @@ $(window).on("load", function() {
                 }
             }
         });
-        splide_init(splide);
         splide.on("drag", function() {
             $(".work__item__images").addClass("dragging");
             $(".work__item__image").removeClass("hover");
         });
         splide.on("dragged", function() {
             $(".work__item__images").removeClass("dragging");
+        });
+        if (isInViewport(currentItem)) splide_init(splide);
+        $(window).on("scroll", function() {
+            if (splide.state.is(Splide.STATES.IDLE)) return;
+            if (isInViewport(currentItem)) splide_init(splide);
         });
         $(window).on("resize", function() {
             splide.destroy();
@@ -636,6 +649,13 @@ $(window).on("load", function() {
         closeButton.addEventListener("click", closeWorkFlyout);
     });
 });
+function isInViewport(element) {
+    var elementTop = $(element).offset().top;
+    var elementBottom = elementTop + $(element).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+}
 function closeWorkFlyout() {
     document.body.classList.remove("flyout-active");
     document.querySelectorAll(".work__flyout").forEach(function(workFlyout, idx) {
@@ -649,6 +669,19 @@ function aspectRatios() {
         let videoHeight = e.videoHeight;
         e.parentElement.style.aspectRatio = videoWidth + "/" + videoHeight;
     });
+}
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 86400000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+function getCookie(name) {
+    const cookies = document.cookie.split(";");
+    for(let i = 0; i < cookies.length; i++){
+        const cookie = cookies[i].trim();
+        if (cookie.startsWith(name + "=")) return decodeURIComponent(cookie.substring(name.length + 1));
+    }
+    return null;
 }
 
 },{"./splide-extension-hover-slider.js":"eJc4N"}],"eJc4N":[function(require,module,exports) {
@@ -746,7 +779,7 @@ $(function() {
         $(".modal__image").removeClass("modal__image--active");
         if ($(activeItem).is(":last-child")) $(".modal__image").first().addClass("modal__image--active");
         else $(activeItem).next().addClass("modal__image--active");
-        $(".modal .modal__image--active video")[0].muted = !$(".modal .modal__image--active video")[0].muted;
+        if ($(".modal .modal__image--active video").length) $(".modal .modal__image--active video")[0].muted = !$(".modal .modal__image--active video")[0].muted;
     }
     function prev() {
         var activeItem = $(".modal__image--active");
@@ -770,7 +803,7 @@ $(function() {
         $(".modal__image").eq(activeSlideNumber - 1).addClass("modal__image--active");
         image.addClass("work__item__image--in-view");
         $(".modal").addClass("modal--active");
-        $(".modal .modal__image--active video")[0].muted = !$(".modal .modal__image--active video")[0].muted;
+        if ($(".modal .modal__image--active video").length) $(".modal .modal__image--active video")[0].muted = !$(".modal .modal__image--active video")[0].muted;
     }
     function close() {
         var scrollToPosition = $(".site-container").attr("data-scroll-pos");

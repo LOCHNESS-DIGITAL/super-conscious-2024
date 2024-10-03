@@ -1,14 +1,27 @@
 
 import { HoverSlider } from './splide-extension-hover-slider.js';
 const { AutoScroll } = window.splide.Extensions;
+
 $(window).on('load', function(){
 
-    $('body').removeClass('loading');
+    // Check if the user has visited the site before
+    if (getCookie('firstVisit') !== 'true' && !$('.coming-soon').length) {
+        // Set a cookie to indicate that the user has visited the site
+        setCookie('firstVisit', 'true', 2); // Cookie expires in 1 year
+        
+        if($('.icon-loading').length) {
+            $('.icon-loading img').fadeOut(300);
+            $('body').removeClass('loading');
+        }
+    }
+    
+    
     aspectRatios();
 
     var elms = document.getElementsByClassName( 'splide' );
 
     for ( var i = 0; i < elms.length; i++ ) {
+        const currentItem = elms[i];
         const splide = new Splide( elms[ i ], {
             type   : 'loop',
             drag   : 'free',
@@ -26,7 +39,7 @@ $(window).on('load', function(){
             updateOnMove: false,
             focus: false,
             pauseOnFocus: false,
-            lazyLoad: true,
+            lazyLoad: false,
             autoScroll: {
                 speed: .5,
                 pauseOnHover: false,
@@ -45,8 +58,6 @@ $(window).on('load', function(){
             }
         });
 
-        splide_init(splide);
-
         splide.on( 'drag', function () {
             $('.work__item__images').addClass('dragging');
             $('.work__item__image').removeClass('hover');
@@ -55,11 +66,26 @@ $(window).on('load', function(){
         splide.on( 'dragged', function () {
             $('.work__item__images').removeClass('dragging');
         } );
+        
+
+        if(isInViewport(currentItem)){
+            splide_init(splide);
+        }
+
+        $(window).on('scroll', function(){
+            if ( splide.state.is( Splide.STATES.IDLE ) ) {
+                return;
+            }
+            if(isInViewport(currentItem)){
+                splide_init(splide);
+            }
+        })
 
         $(window).on('resize', function(){
             splide.destroy();
             splide_init(splide);
         })
+
 
         function splide_init(splide) {
             if (window.innerWidth >= 980) {
@@ -112,9 +138,19 @@ $(window).on('load', function(){
 
     document.querySelectorAll('.work__flyout__close').forEach(function(closeButton, idx){
         closeButton.addEventListener('click', closeWorkFlyout);
-    })    
-    
+    })
+
 });
+
+
+function isInViewport(element) {
+    var elementTop = $(element).offset().top;
+    var elementBottom = elementTop + $(element).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+  
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  }
 
 
 function closeWorkFlyout() {
@@ -134,3 +170,20 @@ function aspectRatios() {
         e.parentElement.style.aspectRatio = videoWidth +'/'+ videoHeight;
     })
 }
+
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+  }
+  
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith(name + '=')) {
+        return decodeURIComponent(cookie.substring(name.length + 1));
+      }
+    }
+    return null;
+  }

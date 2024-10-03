@@ -102,9 +102,7 @@
 
 .work__item__images {
     position: relative;
-    visibility: visible !important;
-    opacity: 0;
-    transition: opacity .25s ease;
+    visibility: visible !important;    
 
     &.dragging {
         .work__item__image {
@@ -126,7 +124,6 @@
             }
         }
     }
-    
 
     @media screen and (min-width: 981px) {
         cursor: grab;
@@ -137,7 +134,12 @@
     }
 
     &.is-initialized {
-        opacity: 1;
+        .work__item__image {
+            img,
+            .work__item__video {
+                opacity: 1;
+            }
+        }
 
         &:before {
             transform: scale(0);
@@ -158,10 +160,24 @@
         margin-right: rem(12px);
     }
 
+    &:not(.splide__slide--clone) {
+        $i: 1;
+        @for $i from 1 to 80 {
+            &:nth-child(#{$i}) {
+                img,
+                .work__item__video {
+                    transition-delay: $i * 0.03s;
+                }
+            }
+        }
+    }
+
     img {
         width: auto;
         height: 387px;
         vertical-align: auto !important;
+        transition: opacity 1.25s ease;
+        opacity: 0;
 
         @media screen and (max-width: 980px) {
             height: 243px;
@@ -212,6 +228,8 @@
     height: 100%;
     width: auto;
     position: relative;
+    opacity: 0;
+    transition: opacity 1.25s ease;
 
     video {
         position: absolute;
