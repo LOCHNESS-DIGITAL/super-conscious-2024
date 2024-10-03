@@ -286,6 +286,28 @@
                             "maxlength": ""
                         }
                     ]
+                },
+                {
+                    "key": "field_66febb66d38ed",
+                    "label": "Featured Work",
+                    "name": "featured_work",
+                    "type": "post_object",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "work"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1
                 }
             ]
         },
@@ -760,5 +782,9 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
+<<<<<<< HEAD
     "modified": 1727925752
+=======
+    "modified": 1727973500
+>>>>>>> feature/homepage-updates
 }
