@@ -101,18 +101,17 @@ global $post;
         <div class="header__icon">
           <?php echo file_get_contents(get_stylesheet_directory() . '/images/icon-noggin.svg'); ?>
         </div>
-        
-        <?php if ( is_post_type_archive('work') || is_taxonomy( 'work-type' ) && !is_single() || is_front_page() ) : ?>
-          <div class="work-navigation">
-            <ul>
-              <li>View:</li>
-              <li><a class="c-button <?php if ( is_post_type_archive('work') ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work">all</a></li>
-              <li><a class="c-button <?php if ( is_tax('work-type', 'product-design')  ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work-type/product-design">Product</a></li>
-              <li><a class="c-button <?php if ( is_tax('work-type', 'brand-identity')  ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work-type/brand-identity">Brand</a></li>
-              <li><a class="c-button <?php if ( is_tax('work-type', 'animation')  ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work-type/animation">Animation</a></li>
-            </ul>
-          </div>
-        <?php endif; ?>
       </div>
+      <?php if ( is_post_type_archive('work') || is_taxonomy( 'work-type' ) && !is_single() || is_front_page() ) : ?>
+        <div class="work-navigation">
+          <ul>
+            <li>View:</li>
+            <li><a class="c-button <?php if ( is_post_type_archive('work') ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work">all</a></li>
+            <li><a class="c-button <?php if ( is_tax('work-type', 'product-design')  ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work-type/product-design">Product</a></li>
+            <li><a class="c-button <?php if ( is_tax('work-type', 'brand-identity')  ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work-type/brand-identity">Brand</a></li>
+            <li><a class="c-button <?php if ( is_tax('work-type', 'animation')  ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work-type/animation">Animation</a></li>
+          </ul>
+        </div>
+      <?php endif; ?>
     </div>
   </header>
