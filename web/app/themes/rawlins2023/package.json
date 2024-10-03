@@ -9,11 +9,9 @@
   "source": "dist/index.js",
   "author": "",
   "license": "ISC",
-  "pre-commit": [ "build" ],
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.2",
     "parcel": "^2.0",
-    "pre-commit": "^1.2.2",
     "sass": "^1.30.0"
   }
 }
