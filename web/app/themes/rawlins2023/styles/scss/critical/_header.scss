@@ -1,5 +1,5 @@
 .header {
-    padding: rem(20px) 0 10.1rem;
+    padding: rem(20px) 0 rem(39px);
 }
 
 .header__logo {
@@ -76,5 +76,34 @@
         right: 0;
         top: 0;
         margin: 0;
+    }
+}
+
+.work-navigation {
+    flex-basis: 100%;
+    margin-top: 94px;
+
+    ul {
+        background: #E4E0DC;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    li:not(:last-child) {
+        margin-right: 10px;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    .c-button {
+        background: white;
+        
+        &:hover,
+        &.active {
+            background: #000;
+            color: white;
+        }
     }
 }

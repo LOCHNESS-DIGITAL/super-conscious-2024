@@ -48,3 +48,10 @@ function rawlins_custom_post_password_msg( $form )
 
     return $msg . $form;
 }
+
+function work_archive_query( $query ) {
+    if ( $query->is_post_type_archive( 'work' ) && $query->is_main_query() ) {
+        $query->set( 'order_by', 'menu_order' );
+    }
+}
+add_action( 'pre_get_posts', 'work_archive_query' );

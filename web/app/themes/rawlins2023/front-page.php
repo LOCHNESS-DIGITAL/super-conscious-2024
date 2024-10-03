@@ -31,20 +31,19 @@ get_header();
     */?>
 
     <?php
-    // the query
-    $args = array(
-        'post_type' => 'work',
-        'showposts' => -1,
-        'orderby' => 'menu_order'
-    );
-    $the_query = new WP_Query( $args ); ?>
+    // featured work
+    $featured_work = $homepage_group['featured_work'];
+    ?>
 
-    <?php if ( $the_query->have_posts() ) : ?>
+    <?php if ( isset($featured_work) && !empty($featured_work) ) : ?>
         <section class="work">
             <div class="work__inner l-container">
                 <div class="work__list">
-                    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    <?php foreach ( $featured_work as $item ) : ?>
                         <?php
+                        $post = $item;
+                        $post = get_post( $item->ID );
+                        setup_postdata( $post );
                         $terms = wp_get_post_terms( get_the_ID(), 'work-type', array('fields=all') );
                         $work_flyout_terms = wp_get_post_terms( get_the_ID(), 'work-type', array('fields=all') );
                         $description = get_field('work_description');
@@ -58,15 +57,7 @@ get_header();
                         <div class="work__item" id="<?php echo get_post_field( 'post_name', get_post() ); ?>">
                             <div class="work__item__content work__item__row">
                                 <div class="work__item__title">
-                                    <?php /* if ( $website ) : ?>
-                                        <a target="_blank" href="<?php echo $website; ?>" class="work__item__external-link">
-                                            <h2><?php the_title(); ?></h2>
-                                            <?php echo file_get_contents(get_stylesheet_directory() . '/images/icon__external-link.svg'); ?>
-                                        </a>
-                                    <?php else: ?>
-                                        <h2><?php the_title(); ?></h2>
-                                    <?php endif; */ ?>
-                                    <h2><?php the_title(); ?></h2>
+                                    <h2><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?> <?php echo file_get_contents( get_stylesheet_directory() . '/images/icon-arrow-right.svg' ); ?></a></h2>
                                 </div>
                                 
                                 <div class="work__item__description"><?php echo $description; ?></div>
@@ -74,7 +65,7 @@ get_header();
                                 <?php if ( !empty($terms) ): ?>
                                     <ul class="work__item__terms">
                                         <?php foreach ( $terms as $term ): ?>
-                                            <?php /*<li><a class="c-button" href="<?php echo get_home_url(); ?>/<?php echo $term->tax; ?>/<?php echo $term->slug; ?>"><span><?php echo $term->name; ?></span></a></li>*/?>
+                                            <?php /*<li><a class="c-button" href="<?php echo get_home_url(); ?>/work-type/<?php echo $term->slug; ?>"><span><?php echo $term->name; ?></span></a></li>*/?>
                                             <li><a class="c-button" href="#"><span><?php echo $term->name; ?></span></a></li>
                                         <?php endforeach; ?>
                                     </ul>
@@ -86,7 +77,8 @@ get_header();
                                         </div>
                                     <?php endif; ?>
                                     <div class="work__item__link work__item__link--more-info">
-                                        <a href="#<?php echo get_post_field( 'post_name', get_post() ); ?>-credits">More Info</a>
+                                        <?php /*<a href="#<?php echo get_post_field( 'post_name', get_post() ); ?>-credits">More Info</a>*/?>
+                                        <a class="c-button" href="<?php echo get_permalink(); ?>">View Project</a>
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +171,7 @@ get_header();
                                 <?php endif; ?>
                             </div>
                         </div>
-                    <?php endwhile; ?>
+                    <?php endforeach; ?>
                     <?php wp_reset_postdata(); ?>
                 </div>
             </div>
