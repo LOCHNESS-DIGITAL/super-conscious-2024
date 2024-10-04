@@ -639,10 +639,12 @@ $(window).on("load", function() {
     document.querySelectorAll(".work__item__link--more-info a").forEach(function(item, idx) {
         item.addEventListener("click", function(e) {
             const flyoutID = this.hash;
-            e.preventDefault();
-            closeWorkFlyout();
-            document.body.classList.add("flyout-active");
-            document.querySelector(flyoutID).classList.add("work__flyout--active");
+            if (flyoutID) {
+                e.preventDefault();
+                closeWorkFlyout();
+                document.body.classList.add("flyout-active");
+                document.querySelector(flyoutID).classList.add("work__flyout--active");
+            }
         });
     });
     document.querySelectorAll(".work__flyout__close").forEach(function(closeButton, idx) {
@@ -809,7 +811,9 @@ $(function() {
         var scrollToPosition = $(".site-container").attr("data-scroll-pos");
         muteAllVideos();
         $(".site-container").removeClass("modal-active");
-        $(document).scrollTop(scrollToPosition);
+        $("body,html").animate({
+            scrollTop: scrollToPosition
+        }, 50);
         $(".modal").removeClass("modal--active");
         $(".modal__images").html("");
     }
