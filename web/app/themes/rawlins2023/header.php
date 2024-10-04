@@ -50,11 +50,11 @@ global $post;
 <body <?php if ( !isset($_COOKIE['firstVisit']) ) { body_class('loading'); } ?>>
 <div class="site-container">
   <?php if ( !isset($_COOKIE['firstVisit']) ) : ?>
-    <div class="icon-loading">
+    <div class="icon-loading" <?php if($global_options['loading_background_color']){ echo 'style="background-color:'. $global_options['loading_background_color'] . ';"';}?>>
       <?php 
       $loading_gif = get_stylesheet_directory_uri() . '/images/icon__loading.gif';
-      if ( get_field( 'loading-gif', 'option' ) ) {
-        $loading_gif = get_field( 'loading-gif', 'option');
+      if ( $global_options['loading_gif'] ) {
+        $loading_gif = $global_options['loading_gif'];
         $loading_gif = $loading_gif['url'];
       }
       ?>
