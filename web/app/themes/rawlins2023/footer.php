@@ -18,7 +18,7 @@ $emails = $global_options['contact_email_addresses'];
 </footer>
 
 </div> <!--site-container-->
-<?php if ( is_post_type_archive('work') || is_taxonomy( 'work-type' ) && !is_single() || is_front_page() ) : ?>
+<?php if ( is_post_type_archive('work') || is_tax( 'work-type' ) && !is_single() || is_front_page() ) : ?>
     <section id="modal" class="modal">
         <div class="modal__inner">
             <div class="modal__close"><span><?php echo file_get_contents(get_stylesheet_directory() . '/images/icon__modal--close.svg'); ?></span></div>

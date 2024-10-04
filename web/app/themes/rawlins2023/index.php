@@ -44,6 +44,16 @@
                             </div>
                         </div>
                         <div class="work__item__images work__item__row splide" aria-label="Splide Basic HTML Example">
+                            <?php 
+                            $loading_gif = get_stylesheet_directory_uri() . '/images/icon__loading.gif';
+                            if ( get_field( 'loading-gif', 'option' ) ) {
+                                $loading_gif = get_field( 'loading-gif', 'option');
+                                $loading_gif = $loading_gif['url'];
+                            }
+                            ?>
+                            <div class="work__item__images-loader">
+                                <?php echo file_get_contents(get_stylesheet_directory() . '/images/icon-loading-spinner.svg'); ?>
+                            </div>
                             <div class="splide__track">
                                 <div class="splide__list">
                                     <?php if($images): ?>
