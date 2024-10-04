@@ -1,5 +1,5 @@
 if (document.body.classList.contains('single')) {
-
+  document.querySelector('html').style.scrollBehavior = 'smooth';
   window.addEventListener('scroll', workSingleStickiness);
   window.addEventListener('load', function(){
     const workInfo = document.querySelector('.work-single__column--info');
@@ -48,7 +48,7 @@ if (document.body.classList.contains('single')) {
     sections.forEach((section) => {
       const sectionTop = section.offsetTop;
       if (scrollY >= sectionTop + 200) {
-        current = section.getAttribute("id");
+        current = section.getAttribute("data-section");
       }
     });
 

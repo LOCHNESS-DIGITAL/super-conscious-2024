@@ -215,118 +215,6 @@
                 "id": ""
             },
             "layouts": {
-                "layout_67002c5c1d826": {
-                    "key": "layout_67002c5c1d826",
-                    "name": "one_column_media_block",
-                    "label": "One Column Media Block",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_67002b88c13f2",
-                            "label": "Section Title",
-                            "name": "section_title",
-                            "type": "text",
-                            "instructions": "Each section title will be displayed in this projects left sidebar and when clicked, it will scroll to this block; wherever it lives on the page. If you don't wish for this section to be featured in the left sidebar you can just leave it blank.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_67002b1ac13ee",
-                            "label": "Item",
-                            "name": "item",
-                            "type": "gallery",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "insert": "append",
-                            "library": "all",
-                            "min": 1,
-                            "max": 1,
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_67002a4362435": {
-                    "key": "layout_67002a4362435",
-                    "name": "two_column_media_block",
-                    "label": "Two Column Media Block",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_67002c05c13f3",
-                            "label": "Section Title",
-                            "name": "section_title",
-                            "type": "text",
-                            "instructions": "Each section title will be displayed in this projects left sidebar and when clicked, it will scroll to this block; wherever it lives on the page. If you don't wish for this section to be featured in the left sidebar you can just leave it blank.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_67002ac7c13ec",
-                            "label": "Items",
-                            "name": "items",
-                            "type": "gallery",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "insert": "append",
-                            "library": "all",
-                            "min": 2,
-                            "max": 2,
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_67002c991d827": {
                     "key": "layout_67002c991d827",
                     "name": "content_block",
@@ -374,6 +262,80 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_67002c5c1d826": {
+                    "key": "layout_67002c5c1d826",
+                    "name": "one_column_media_block",
+                    "label": "One Column Media Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67002b1ac13ee",
+                            "label": "Item",
+                            "name": "item",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "all",
+                            "min": 1,
+                            "max": 1,
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_67002a4362435": {
+                    "key": "layout_67002a4362435",
+                    "name": "two_column_media_block",
+                    "label": "Two Column Media Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_67002ac7c13ec",
+                            "label": "Items",
+                            "name": "items",
+                            "type": "gallery",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "insert": "append",
+                            "library": "all",
+                            "min": 2,
+                            "max": 2,
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -411,5 +373,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1728064909
+    "modified": 1728084980
 }

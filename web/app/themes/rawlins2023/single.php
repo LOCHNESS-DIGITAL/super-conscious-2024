@@ -17,7 +17,8 @@ $flex_content = get_field('main_content');
 if ( $flex_content ) :
   $i = 0;
   foreach ( $flex_content as $item ):
-    if ( !empty($item['section_title'] ) ) {
+    
+    if ( $item['acf_fc_layout'] == 'content_block' && !empty($item['section_title'] ) ) {
       $sidebar_jumplinks[$i]['title'] = $item['section_title'];
       $sidebar_jumplinks[$i]['slug'] = preg_replace('/\W+/', '-', strtolower(trim($item['section_title'])));
       $i++;
@@ -59,6 +60,7 @@ endif;
       <div class="work-single__column work-single__column--content">
         <?php if ( have_rows('main_content') ) : ?>
           <main class="work-single__main">
+            <?php $current_section = false; ?>
             <?php while ( have_rows('main_content') ) : the_row(); ?>
               <?php if ( get_row_layout() == 'one_column_media_block' ) : ?>
                 <?php
@@ -71,7 +73,7 @@ endif;
                   $image_src_set = wp_get_attachment_image_srcset( $media['ID'], 'work-thumbnail' );
                 }
                 ?>
-                <div class="work-single__block one-column-media" id="<?php echo preg_replace('/\W+/', '-', strtolower(trim(get_sub_field('section_title'))));?>">
+                <div class="work-single__block one-column-media" <?php if($current_section) { echo 'data-section="'.$current_section.'"'; } ?>>
                   <?php if ( $media['type'] == 'video' ) : ?>
                     <?php
                     $aspect_ratio = $media['width'] . '/' . $media['height'];
@@ -95,7 +97,7 @@ endif;
               <?php elseif ( get_row_layout() == 'two_column_media_block' ): ?>
                 <?php $medias = get_sub_field('items'); ?>
                 <?php if ( $medias ): ?>
-                  <div class="work-single__block two-column-media" id="<?php echo preg_replace('/\W+/', '-', strtolower(trim(get_sub_field('section_title'))));?>">
+                  <div class="work-single__block two-column-media" <?php if($current_section) { echo 'data-section="'.$current_section.'"'; } ?>>
                     <div class="two-column-media__row">
                       <?php foreach ( $medias as $media ) : ?>
                         <?php
@@ -132,7 +134,8 @@ endif;
                   <?php endif; ?>
                 </div>
               <?php elseif ( get_row_layout() == 'content_block' ): ?>
-                <div class="work-single__block content-block" id="<?php echo preg_replace('/\W+/', '-', strtolower(trim(get_sub_field('section_title'))));?>">
+                <?php $current_section = preg_replace('/\W+/', '-', strtolower(trim(get_sub_field('section_title')))); ?>
+                <div id="<?php echo $current_section; ?>" class="work-single__block content-block" <?php if($current_section) { echo 'data-section="'.$current_section.'"'; } ?>>
                   <div class="content-block__content">
                     <?php if ( get_sub_field('section_title') ): ?>
                       <span class="content-block__title"><?php echo get_sub_field('section_title'); ?></span>
