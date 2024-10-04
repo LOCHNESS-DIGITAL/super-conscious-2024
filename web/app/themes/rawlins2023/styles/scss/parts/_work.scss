@@ -17,7 +17,7 @@
 }
 
 .work__item__content {
-    margin-bottom: rem(30px);
+    margin-bottom: 30px;
     justify-content: flex-start;
     align-items: flex-start;
 
@@ -26,7 +26,7 @@
 
         > * {
             &:not(:last-child) {
-                margin-bottom: rem(20px);
+                margin-bottom: 20px;
             }
         }
     }
@@ -45,7 +45,7 @@
 
     h2 {
         @include fp;
-        font-size: rem(12px);
+        font-size: 12px;
         text-transform: uppercase;
         margin-bottom: 0;
 
@@ -96,10 +96,10 @@
 
     li {
         display: inline-block;
-        margin-bottom: rem(10px);
+        margin-bottom: 10px;
 
         &:not(:last-child) {
-            margin-right: rem(10px);
+            margin-right: 10px;
         }
     }
 
@@ -196,7 +196,7 @@
     }
 
     &:not(:last-child) {
-        margin-right: rem(12px);
+        margin-right: 12px;
     }
 
    
@@ -315,8 +315,8 @@
 }
 
 .work__item__link {
-    margin-left: rem(70px);
-    font-size: rem(12px);
+    margin-left: 70px;
+    font-size: 12px;
     text-transform: uppercase;
 
     &:first-child {
@@ -325,7 +325,7 @@
 
     @media screen and (max-width: 768px ) {
         width: 100%;
-        margin-bottom: rem(22px);
+        margin-bottom: 22px;
         display: block;
         margin-left: 0;
     }

@@ -21,7 +21,7 @@ body.flyout-active {
 }
 
 .work__flyout {
-    width: rem(520px);
+    width: 520px;
     max-width: 90%;
     background: black;
     position: fixed;
@@ -32,7 +32,7 @@ body.flyout-active {
     top: 0;
     height: 100%;
     color: white;
-    padding: rem(40px);
+    padding: 40px;
     overflow-y: scroll;
 
     &.work__flyout--active {
@@ -46,25 +46,25 @@ body.flyout-active {
 
 .work__flyout__close {
     cursor: pointer;
-    padding: rem(10px) 0;
-    margin-bottom: rem(22px);
+    padding: 10px 0;
+    margin-bottom: 22px;
     display: flex;
     justify-content: flex-end;
 
     svg {
-        width: rem(10px);
-        height: rem(10px);
+        width: 10px;
+        height: 10px;
     }
 }
 
 .work__flyout__header {
-    padding-bottom: rem(22px);
-    margin-bottom: rem(22px);
+    padding-bottom: 22px;
+    margin-bottom: 22px;
     border-bottom: 1px #fff dashed;
 }
 
 .work__flyout__title {
-    font-size: rem(12px);
+    font-size: 12px;
     text-transform: uppercase;
 }
 
@@ -75,17 +75,17 @@ body.flyout-active {
 
 .work__flyout__metrics-title,
 .work__flyout__team-title {
-    font-size: rem(12px);
+    font-size: 12px;
     text-transform: uppercase;
-    margin-top: rem(22px);
-    margin-bottom: rem(22px);
+    margin-top: 22px;
+    margin-bottom: 22px;
 }
 
 .work__flyout__metrics-table {
     @include fs();
-    margin-top: rem(22px);
-    padding-bottom: rem(22px);
-    margin-bottom: rem(22px);
+    margin-top: 22px;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
     border-bottom: 1px #fff dashed;
 }
 
@@ -120,37 +120,37 @@ body.flyout-active {
 
     &:before {
         content: "| ";
-        padding-right: rem(10px);
+        padding-right: 10px;
     }
     
 
     &:last-child:after {
         content: " |";
         margin-left: auto;
-        padding-right: rem(10px);
+        padding-right: 10px;
     }
 }
 
 .work__flyout__team {
-    margin-top: rem(22px);
-    padding-bottom: rem(22px);
-    margin-bottom: rem(22px);
+    margin-top: 22px;
+    padding-bottom: 22px;
+    margin-bottom: 22px;
     border-bottom: 1px dashed #fff;
 }
 
 .work__flyout__team-member {
     text-transform: uppercase;
-    font-size: rem(12px);
+    font-size: 12px;
 
 }
 
 .work__flyout__terms.work__item__terms {
-    margin: rem(22px) 0 0;
+    margin: 22px 0 0;
     max-width: 100%;
 }
 
 .work__flyout__link {
-    margin-top: rem(22px);
+    margin-top: 22px;
     
     a {
         @include fs();

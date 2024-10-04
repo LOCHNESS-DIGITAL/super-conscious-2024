@@ -1,5 +1,5 @@
 .header {
-    padding: rem(54px) 0 rem(39px);
+    padding: 54px 0 39px;
 }
 
 .header__logo {
@@ -42,14 +42,14 @@
 .header__nav {
     width: 25%;
     @media screen and (max-width: 1200px) {
-        margin-top: rem(40px);
+        margin-top: 40px;
         width: 100%;
     }
 }
 
 .header__nav__item {
     display: block;
-    font-size: rem(12px);
+    font-size: 12px;
     text-transform: uppercase;
     
     a {
@@ -94,6 +94,8 @@
 .work-navigation {
     flex-basis: 100%;
     margin-top: 94px;
+    opacity: 0;
+    pointer-events: none;
 
     ul {
         background: #E4E0DC;
@@ -116,6 +118,44 @@
         &.active {
             background: #000;
             color: white;
+        }
+    }
+}
+
+body {
+    &.home,
+    &.post-type-archive-work,
+    &.tax-work-type {
+        .work-navigation {
+            opacity: 1;
+            pointer-events: inherit;
+        }
+    }
+
+    &.single {
+        .header__icon,
+        .header__logo {
+            > * {
+                position: fixed;
+            }
+        }
+        .header__logo {
+            a {
+                width: 167px;
+            }
+        }
+        .header__icon {
+            z-index: 1000;
+            svg {
+                right: 22px;
+                mix-blend-mode: multiply;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .intro__description,
+            .header__nav {
+                display: none;
+            }
         }
     }
 }
