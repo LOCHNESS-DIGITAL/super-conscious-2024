@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_66fdfe6f017bf",
@@ -226,7 +226,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_64404cf0d368d",
@@ -263,7 +263,7 @@
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
-                    "layout": "table",
+                    "layout": "row",
                     "button_label": "Add Capability",
                     "sub_fields": [
                         {
@@ -324,7 +324,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
                     "key": "field_644032d2b9a72",
@@ -782,5 +782,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1727973500
+    "modified": 1728050868
 }
