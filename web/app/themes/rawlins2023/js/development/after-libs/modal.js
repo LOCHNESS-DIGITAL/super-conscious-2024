@@ -97,8 +97,10 @@ function close() {
   var scrollToPosition = $('.site-container').attr('data-scroll-pos');
   muteAllVideos();
   $('.site-container').removeClass('modal-active');
+  $('body,html').animate({
+    scrollTop: scrollToPosition
+  }, 50)
   
-  $(document).scrollTop(scrollToPosition);
   $('.modal').removeClass('modal--active');
   $('.modal__images').html('');
 }

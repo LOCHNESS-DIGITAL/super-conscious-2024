@@ -1,28 +1,40 @@
 .header {
-    padding: rem(20px) 0 rem(39px);
+    padding: rem(54px) 0 rem(39px);
 }
 
 .header__logo {
-    position: relative;
     width: 20.5%;
-    
-    img {
-        opacity: 0;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        width: 143px;
-        height: 69px;
-    }
 
-    &:hover {
-        img {
-            opacity: 1;
+    a {
+        position: relative;
+        display: inline-block;
+    
+
+        img:not(.header__logo--hover) {
+            width: 100%;
+            max-width: 160px;
+            height: auto;
+        }
+        
+        > *.header__logo--hover {
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 143px;
+            height: 69px;
         }
 
-        svg {
-            opacity: 0;
+        &:hover {
+            > *.header__logo--hover {
+                opacity: 1;
+            }
+
+            svg,
+            img:not(.header__logo--hover) {
+                opacity: 0;
+            }
         }
     }
 }

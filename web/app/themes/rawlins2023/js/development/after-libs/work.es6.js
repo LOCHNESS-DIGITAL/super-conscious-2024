@@ -107,7 +107,6 @@ $(window).on('load', function(){
         }
     }
     
-    
     aspectRatios();
 
     $(document).on('click', '.work__item__video__volume-up',function(){

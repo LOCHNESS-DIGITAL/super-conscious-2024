@@ -811,7 +811,9 @@ $(function() {
         var scrollToPosition = $(".site-container").attr("data-scroll-pos");
         muteAllVideos();
         $(".site-container").removeClass("modal-active");
-        $(document).scrollTop(scrollToPosition);
+        $("body,html").animate({
+            scrollTop: scrollToPosition
+        }, 50);
         $(".modal").removeClass("modal--active");
         $(".modal__images").html("");
     }
