@@ -10,10 +10,11 @@
 // Templates
 @import 'scss/templates/front-page.scss';
 @import 'scss/templates/template-info.scss';
+@import 'scss/templates/single.scss';
 
 
 // Globals ( any classes or elements that are commonly used, like .button or .icon )
-@import 'scss/globals/entry-content';
+// @import 'scss/globals/entry-content';
 @import 'scss/globals/components';
 
 // Blocks

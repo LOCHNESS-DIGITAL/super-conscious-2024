@@ -125,63 +125,6 @@ get_header();
                                 </div>
                         </div>
                     </div>
-                    <?php /*
-                    <div class="work__flyout" id="<?php echo get_post_field( 'post_name', get_post() ); ?>-credits">
-                        <div class="work__flyout__inner">
-                            <div class="work__flyout__close"><?php echo file_get_contents(get_stylesheet_directory() . '/images/icon__work-flyout-close.svg'); ?></div>
-                            <div class="work__flyout__header">
-                                <h3 class="work__flyout__title"><?php echo get_the_title(); ?></h3>
-                                <div class="work__flyout__long-description">
-                                    <?php
-                                    if ( $long_description ) {
-                                        echo $long_description;
-                                    } else {
-                                        echo $description;
-                                    }
-                                    ?>
-                                </div>
-                            </div>
-                            <?php if ( $metrics ) : ?>
-                                <div class="work__flyout__metrics">
-                                    <h4 class="work__flyout__metrics-title">Results</h3>
-                                    <div class="work__flyout__metrics-table">
-                                        <div class="work__flyout__metrics-row">
-                                            <div class="work__flyout__metrics-item">Metric</div>
-                                            <div class="work__flyout__metrics-item">Before</div>
-                                            <div class="work__flyout__metrics-item">After</div>
-                                        </div>
-                                        <?php foreach ( $metrics as $metric ) : ?>
-                                            <div class="work__flyout__metrics-row">
-                                                <div class="work__flyout__metrics-item"><?php echo $metric['metric_name']; ?></div>
-                                                <div class="work__flyout__metrics-item"><?php echo $metric['before']; ?></div>
-                                                <div class="work__flyout__metrics-item"><?php echo $metric['after']; ?></div>
-                                            </div>
-                                        <?php endforeach; ?>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
-                            <?php if ( $team ): ?>
-                                <div class="work__flyout__team">
-                                    <h4 class="work__flyout__team-title">Team</h3>
-                                    <?php foreach ( $team as $item ): ?>
-                                        <div class="work__flyout__team-member"><?php echo $item['team_member']; ?></div>
-                                    <?php endforeach; ?>
-                                </div>
-                            <?php endif; ?>
-                            <?php if ( !empty($work_flyout_terms) ): ?>
-                                <ul class="work__flyout__terms work__item__terms">
-                                    <?php foreach ( $work_flyout_terms as $term ): ?>
-                                        <li><a class="c-button" href="#"><span><?php echo $term->name; ?></span></a></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            <?php endif; ?>
-                            <?php if ( $website ) : ?>
-                                <div class="work__flyout__link">
-                                    <a target="_blank" href="<?php echo $website; ?>">Visit Website</a>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                    </div>*/?>
                 <?php endforeach; ?>
                 <?php wp_reset_postdata(); ?>
             </div>

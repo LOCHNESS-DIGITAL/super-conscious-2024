@@ -51,6 +51,10 @@ if (elms.length) {
             $('.work__item__images').removeClass('dragging');
         } );
 
+        // splide.on('ready', aspectRatios);
+
+        aspectRatios();
+
         $(window).on('load', function(){
             if(isInViewport(currentItem)){
                 splide_init(splide);
@@ -95,99 +99,100 @@ if (elms.length) {
             });
         });
     }
+}
 
-    $(window).on('load', function(){
+$(window).on('load', function(){
 
-        // Check if the user has visited the site before
-        if (getCookie('firstVisit') !== 'true' && !$('.coming-soon').length) {
-            // Set a cookie to indicate that the user has visited the site
-            setCookie('firstVisit', 'true', 2); // Cookie expires in 1 year
-            
-            if($('.icon-loading').length) {
-                $('.icon-loading img').fadeOut(300);
-                $('body').removeClass('loading');
-            }
-        }
+    // Check if the user has visited the site before
+    if (getCookie('firstVisit') !== 'true' && !$('.coming-soon').length) {
+        // Set a cookie to indicate that the user has visited the site
+        setCookie('firstVisit', 'true', 2); // Cookie expires in 1 year
         
-        aspectRatios();
+        if($('.icon-loading').length) {
+            $('.icon-loading img').fadeOut(300);
+            $('body').removeClass('loading');
+        }
+    }
 
-        $(document).on('click', '.work__item__video__volume-up',function(){
-            const video = $(this).prev('video');
-            $(this).removeClass('active');
-            video[0].muted = !video[0].muted;
-            $(this).next().addClass('active');
+    $(document).on('click', '.work__item__video__volume-up',function(){
+        const video = $(this).prev('video');
+        $(this).removeClass('active');
+        video[0].muted = !video[0].muted;
+        $(this).next().addClass('active');
+    })
+
+    $(document).on('click', '.work__item__video__volume-down',function(){
+        const video = $(this).prev().prev('video');
+        console.log(video);
+        $(this).removeClass('active');
+        video[0].muted = !video[0].muted;
+        $(this).prev().addClass('active');
+    })
+
+    // Work Flyout
+    document.querySelectorAll('.work__item__link--more-info a').forEach(function(item, idx) {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const flyoutID = this.hash;
+            if(flyoutID) {
+                closeWorkFlyout()
+                document.body.classList.add('flyout-active');
+                document.querySelector(flyoutID).classList.add('work__flyout--active');
+            }
         })
-
-        $(document).on('click', '.work__item__video__volume-down',function(){
-            const video = $(this).prev().prev('video');
-            console.log(video);
-            $(this).removeClass('active');
-            video[0].muted = !video[0].muted;
-            $(this).prev().addClass('active');
-        })
-
-        // Work Flyout
-        document.querySelectorAll('.work__item__link--more-info a').forEach(function(item, idx) {
-            item.addEventListener('click', function(e) {
-                const flyoutID = this.hash;
-                if(flyoutID) {
-                    e.preventDefault();
-                    closeWorkFlyout()
-                    document.body.classList.add('flyout-active');
-                    document.querySelector(flyoutID).classList.add('work__flyout--active');
-                }
-            })
-        });
-
-        document.querySelectorAll('.work__flyout__close').forEach(function(closeButton, idx){
-            closeButton.addEventListener('click', closeWorkFlyout);
-        })
-
     });
 
+    document.querySelectorAll('.work__flyout__close').forEach(function(closeButton, idx){
+        closeButton.addEventListener('click', closeWorkFlyout);
+    })
 
-    function isInViewport(element) {
-        var elementTop = $(element).offset().top;
-        var elementBottom = elementTop + $(element).outerHeight();
-        var viewportTop = $(window).scrollTop();
-        var viewportBottom = viewportTop + $(window).height() + 700;
-    
-        return elementBottom > viewportTop && elementTop < viewportBottom;
-    }
+});
 
 
-    function closeWorkFlyout() {
-        document.body.classList.remove('flyout-active');
-        document.querySelectorAll('.work__flyout').forEach(function(workFlyout, idx) {
-            workFlyout.classList.remove('work__flyout--active');
-        })
-    }
+function isInViewport(element) {
+    var elementTop = $(element).offset().top;
+    var elementBottom = elementTop + $(element).outerHeight();
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height() + 700;
 
-    function aspectRatios() {
-        const videos = document.querySelectorAll('.work__item__video video');
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+}
 
-        videos.forEach(function(e){
-            let videoWidth = e.videoWidth;
-            let videoHeight = e.videoHeight;
 
+function closeWorkFlyout() {
+    document.body.classList.remove('flyout-active');
+    document.querySelectorAll('.work__flyout').forEach(function(workFlyout, idx) {
+        workFlyout.classList.remove('work__flyout--active');
+    })
+}
+
+function aspectRatios() {
+    const videos = document.querySelectorAll('.work__item__video video');
+
+    videos.forEach(function(e){
+        let videoWidth = e.videoWidth;
+        let videoHeight = e.videoHeight;
+        setTimeout(function(){
             e.parentElement.style.aspectRatio = videoWidth +'/'+ videoHeight;
-        })
-    }
+        }, 1000)
+        
+        
+    })
+}
 
-    function setCookie(name, value, days) {
-        const expires = new Date();
-        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-        document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+function setCookie(name, value, days) {
+    const expires = new Date();
+    expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+    document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+}
+
+function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(name + '=')) {
+        return decodeURIComponent(cookie.substring(name.length + 1));
     }
-    
-    function getCookie(name) {
-        const cookies = document.cookie.split(';');
-        for (let i = 0; i < cookies.length; i++) {
-        const cookie = cookies[i].trim();
-        if (cookie.startsWith(name + '=')) {
-            return decodeURIComponent(cookie.substring(name.length + 1));
-        }
-        }
-        return null;
     }
+    return null;
 }

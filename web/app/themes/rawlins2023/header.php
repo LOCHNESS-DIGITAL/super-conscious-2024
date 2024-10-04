@@ -47,7 +47,7 @@ global $post;
   ?>
 </head>
 
-<body <?php if ( !isset($_COOKIE['firstVisit']) ) { body_class('loading'); } ?>>
+<body <?php if ( !isset($_COOKIE['firstVisit']) ) { body_class('loading'); } else { body_class(); } ?>>
 <div class="site-container">
   <?php if ( !isset($_COOKIE['firstVisit']) ) : ?>
     <div class="icon-loading" <?php if($global_options['loading_background_color']){ echo 'style="background-color:'. $global_options['loading_background_color'] . ';"';}?>>
@@ -102,7 +102,6 @@ global $post;
           <?php echo file_get_contents(get_stylesheet_directory() . '/images/icon-noggin.svg'); ?>
         </div>
       </div>
-      <?php if ( is_post_type_archive('work') || is_tax( 'work-type' ) && !is_single() || is_front_page() ) : ?>
         <div class="work-navigation">
           <ul>
             <li>View:</li>
@@ -112,6 +111,5 @@ global $post;
             <li><a class="c-button <?php if ( is_tax('work-type', 'animation')  ) { echo 'active'; } ?>" href="<?php echo get_home_url(); ?>/work-type/animation">Animation</a></li>
           </ul>
         </div>
-      <?php endif; ?>
     </div>
   </header>
