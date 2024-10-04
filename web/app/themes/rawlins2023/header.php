@@ -102,7 +102,7 @@ global $post;
           <?php echo file_get_contents(get_stylesheet_directory() . '/images/icon-noggin.svg'); ?>
         </div>
       </div>
-      <?php if ( is_post_type_archive('work') || is_taxonomy( 'work-type' ) && !is_single() || is_front_page() ) : ?>
+      <?php if ( is_post_type_archive('work') || is_tax( 'work-type' ) && !is_single() || is_front_page() ) : ?>
         <div class="work-navigation">
           <ul>
             <li>View:</li>

@@ -7,3 +7,22 @@
 // @import '../inc/layout';
 // @import '../critical/base';
 // @import '../globals/entry-content';
+
+
+.acf-field.acf-field-group > .acf-label {
+  font-size: 30px;
+}
+
+.acf-fields.-left>.acf-field-644032ebb9a74>.acf-input {
+  max-width: 500px;
+
+  .acf-row-handle .acf-icon {
+    margin: 0;
+
+    &:not(.-minus) {
+      top: 8px;
+    }
+  }
+
+}
+
