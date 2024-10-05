@@ -130,7 +130,7 @@ $(window).on('load', function(){
     })
 
     // Work Flyout
-    document.querySelectorAll('.work__item__link--more-info a').forEach(function(item, idx) {
+    document.querySelectorAll('body.single .work__item__link--more-info a').forEach(function(item, idx) {
         item.addEventListener('click', function(e) {
             e.preventDefault();
             const flyoutID = this.hash;
