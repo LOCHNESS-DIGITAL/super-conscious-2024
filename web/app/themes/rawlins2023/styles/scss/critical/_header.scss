@@ -103,12 +103,25 @@
         display: inline-flex;
         align-items: center;
         padding: 10px;
+
+        @media screen and (max-width: 768px) {
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 
     li:not(:last-child) {
         margin-right: 10px;
         font-size: 12px;
         text-transform: uppercase;
+
+        @media screen and (max-width: 768px) {
+            margin-right: 20px;
+
+            &:first-child {
+                margin-right: auto;
+            }
+        }
     }
 
     .c-button {
@@ -137,6 +150,10 @@ body {
         .header__logo {
             > * {
                 position: fixed;
+
+                @media screen and (max-width: 768px) {
+                    position: relative;
+                }
             }
         }
         .header__logo {
@@ -153,7 +170,8 @@ body {
         }
         @media screen and (max-width: 768px) {
             .intro__description,
-            .header__nav {
+            .header__nav,
+            .work-navigation  {
                 display: none;
             }
         }

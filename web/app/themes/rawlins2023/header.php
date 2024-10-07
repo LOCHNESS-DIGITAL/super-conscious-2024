@@ -64,7 +64,7 @@ global $post;
   <nav class="l-navigation">
     <div class="l-navigation__inner l-container">
       <ul>
-        <li><a <?php if (!is_page_template( 'template-reel.php' )){ echo 'class="active"'; } ?> href="<?php echo get_home_url(); ?>">Work</a></li>
+        <li><a <?php if (!is_page_template( 'template-reel.php' )){ echo 'class="active"'; } ?> href="<?php echo get_home_url(); ?>/work">Work</a></li>
         <li><a <?php if (is_page_template( 'template-reel.php' )){ echo 'class="active"'; } ?> href="<?php echo get_home_url(); ?>/reel">Reel</a></li>
       </ul>
     </div>
