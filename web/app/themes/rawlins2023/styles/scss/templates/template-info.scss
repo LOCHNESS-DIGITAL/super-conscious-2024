@@ -136,10 +136,10 @@
     }
 }
 
-body:not(.home) {
-    .header {
-        @media screen and (max-width: 980px) {
-            padding-bottom: 60px;
-        }
-    }
-}
+// body:not(.home) {
+//     .header {
+//         @media screen and (max-width: 980px) {
+//             padding-bottom: 60px;
+//         }
+//     }
+// }
