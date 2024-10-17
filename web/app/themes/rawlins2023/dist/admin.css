@@ -1,17 +1,2 @@
-.acf-field.acf-field-group > .acf-label {
-  font-size: 30px;
-}
-
-.acf-fields.-left > .acf-field-644032ebb9a74 > .acf-input {
-  max-width: 500px;
-}
-
-.acf-fields.-left > .acf-field-644032ebb9a74 > .acf-input .acf-row-handle .acf-icon {
-  margin: 0;
-}
-
-.acf-fields.-left > .acf-field-644032ebb9a74 > .acf-input .acf-row-handle .acf-icon:not(.-minus) {
-  top: 8px;
-}
-
+.acf-field.acf-field-group>.acf-label{font-size:30px}.acf-fields.-left>.acf-field-644032ebb9a74>.acf-input{max-width:500px}.acf-fields.-left>.acf-field-644032ebb9a74>.acf-input .acf-row-handle .acf-icon{margin:0}.acf-fields.-left>.acf-field-644032ebb9a74>.acf-input .acf-row-handle .acf-icon:not(.-minus){top:8px}
 /*# sourceMappingURL=admin.css.map */
