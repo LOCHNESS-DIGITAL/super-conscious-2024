@@ -10,32 +10,32 @@
         display: inline-block;
         width: 167px;
 
-        img:not(.header__logo--hover) {
+        svg {
             width: 100%;
             max-width: 160px;
             height: auto;
         }
         
-        > *.header__logo--hover {
-            opacity: 0;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            width: 143px;
-            height: 69px;
-        }
+        // > *.header__logo--hover {
+        //     opacity: 0;
+        //     position: absolute;
+        //     top: 50%;
+        //     left: 0;
+        //     transform: translateY(-50%);
+        //     width: 143px;
+        //     height: 69px;
+        // }
 
-        &:hover {
-            > *.header__logo--hover {
-                opacity: 1;
-            }
+        // &:hover {
+        //     > *.header__logo--hover {
+        //         opacity: 1;
+        //     }
 
-            svg,
-            img:not(.header__logo--hover) {
-                opacity: 0;
-            }
-        }
+        //     svg,
+        //     img:not(.header__logo--hover) {
+        //         opacity: 0;
+        //     }
+        // }
     }
 }
 

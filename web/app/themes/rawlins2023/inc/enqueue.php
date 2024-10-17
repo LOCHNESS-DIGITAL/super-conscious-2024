@@ -26,8 +26,11 @@ function rawlins_scripts(){
 		wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), '3.3.1', true);
 
 		// Main Scripts (this file is concatenated from the files inside of js/development/ )
-		wp_enqueue_script('scripts', get_template_directory_uri().'/dist/index.js', array('splide-auto-scroll-script'), filemtime( get_template_directory().'/dist/index.js' ), true);
+		wp_enqueue_script('scripts', get_template_directory_uri().'/dist/index.js', array('splide-auto-scroll-script', 'vimeo-player'), filemtime( get_template_directory().'/dist/index.js' ), true);
 
+		// Vimeo player
+		wp_enqueue_script('vimeo-player', 'https://player.vimeo.com/api/player.js', array(), '', true);
+		
 		// Main Styles
 		wp_enqueue_style('styles', get_template_directory_uri().'/dist/index.css', array(), filemtime( get_template_directory().'/dist/index.css' ) );
 

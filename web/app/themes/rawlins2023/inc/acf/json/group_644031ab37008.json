@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "block",
             "sub_fields": [
                 {
                     "key": "field_66fdfe6f017bf",
@@ -226,7 +226,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "block",
             "sub_fields": [
                 {
                     "key": "field_64404cf0d368d",
@@ -263,7 +263,7 @@
                     "collapsed": "",
                     "min": 0,
                     "max": 0,
-                    "layout": "row",
+                    "layout": "table",
                     "button_label": "Add Capability",
                     "sub_fields": [
                         {
@@ -288,7 +288,7 @@
                     ]
                 },
                 {
-                    "key": "field_66fff4da50d4d",
+                    "key": "field_66febb66d38ed",
                     "label": "Featured Work",
                     "name": "featured_work",
                     "type": "post_object",
@@ -312,6 +312,47 @@
             ]
         },
         {
+            "key": "field_671059054ecf0",
+            "label": "Reel Template",
+            "name": "reel_template",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_67105a134ecf3",
+                    "label": "oEmbed",
+                    "name": "oembed",
+                    "type": "oembed",
+                    "instructions": "Paste the url of the Vimeo video here. Not the embed src, but the actual url you would go to to get to the video. If the video appears below, it was successful.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_671059324ecf1",
+                                "operator": "==",
+                                "value": "oembed"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": ""
+                }
+            ]
+        },
+        {
             "key": "field_644032cab9a71",
             "label": "Info",
             "name": "info",
@@ -324,7 +365,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "block",
             "sub_fields": [
                 {
                     "key": "field_644032d2b9a72",
@@ -782,5 +823,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1727925752
+    "modified": 1729129386
 }
