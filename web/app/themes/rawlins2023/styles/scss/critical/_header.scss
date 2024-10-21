@@ -127,6 +127,16 @@ body:not(.single) {
             display: flex;
             justify-content: flex-end;
         }
+
+        @media screen and (max-width: 500px) {
+            justify-content: space-between;
+        }
+    }
+
+    li:first-child {
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
     }
 
     li:not(:last-child) {
@@ -142,7 +152,7 @@ body:not(.single) {
             }
         }
 
-        @media screen and (max-width: 400px) {
+        @media screen and (max-width: 500px) {
             margin-right: 7px;
         }
     }
