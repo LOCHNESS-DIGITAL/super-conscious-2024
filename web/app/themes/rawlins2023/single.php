@@ -29,6 +29,7 @@ endif;
 ?>
 
 <section class="work-single">
+  <div class="work__flyout-overlay"></div>
   <div class="work-single__inner">
       <div class="work-single__column work-single__column--info">
         <div class="work__item__content">
@@ -219,7 +220,7 @@ endif;
           <?php if ( !empty($work_flyout_terms) ): ?>
               <ul class="work__flyout__terms work__item__terms">
                   <?php foreach ( $work_flyout_terms as $term ): ?>
-                      <li><a class="c-button" href="#"><span><?php echo $term->name; ?></span></a></li>
+                      <li class="c-button"><span><?php echo $term->name; ?></span></li>
                   <?php endforeach; ?>
               </ul>
           <?php endif; ?>

@@ -97,9 +97,12 @@ global $post;
           <li class="header__nav__item">New projects: <a href="mailto:info@super-conscious.studio" class="header__nav__link">info@super-conscious.studio</a></li>
           <li class="header__nav__item">Careers: <a href="mailto:Careers@super-conscious.studio" class="header__nav__link">Careers@super-conscious.studio</a></li>
         </nav>
-        <div class="header__icon">
+        <a href="<?php echo get_home_url(); ?>" class="header__icon<?php if($logo_hover): echo ' has-hover'; endif; ?>">
           <?php echo file_get_contents(get_stylesheet_directory() . '/images/icon-noggin.svg'); ?>
-        </div>
+          <?php if($logo_hover): ?>
+            <img class="header__icon--hover" src="<?php echo $logo_hover; ?>" alt="">
+          <?php endif; ?>
+          </a>
       </div>
         <div class="work-navigation">
           <ul>

@@ -39,7 +39,6 @@ if (document.body.classList.contains('single')) {
     }
   }
 
-
   const sections = document.querySelectorAll(".work-single__block");
   const navLi = document.querySelectorAll('.work__item__terms a');
   window.onscroll = () => {

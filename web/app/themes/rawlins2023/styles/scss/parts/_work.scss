@@ -105,16 +105,14 @@
         &:not(:last-child) {
             margin-right: 10px;
         }
-    }
 
-    .c-button {
-        border: none;
-        background: #E4E0DC;
-        display: block;
-
-        &:hover {
-            font-weight: bold;
+        &.c-button {
             border: none;
+            background: #E4E0DC;
+
+            span:after {
+                display: none;
+            }
         }
     }
 }

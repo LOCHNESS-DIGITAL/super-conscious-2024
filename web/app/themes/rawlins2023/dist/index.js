@@ -586,8 +586,6 @@ if (elms.length) for(var i = 0; i < elms.length; i++){
     splide.on("dragged", function() {
         $(".work__item__images").removeClass("dragging");
     });
-    // splide.on('ready', aspectRatios);
-    aspectRatios();
     $(window).on("load", function() {
         if (isInViewport(currentItem)) splide_init(splide);
     });
@@ -627,6 +625,7 @@ $(window).on("load", function() {
             $("body").removeClass("loading");
         }
     }
+    aspectRatios();
     $(document).on("click", ".work__item__video__volume-up", function() {
         const video = $(this).prev("video");
         $(this).removeClass("active");
@@ -655,6 +654,7 @@ $(window).on("load", function() {
     document.querySelectorAll(".work__flyout__close").forEach(function(closeButton, idx) {
         closeButton.addEventListener("click", closeWorkFlyout);
     });
+    document.querySelector(".work__flyout-overlay").addEventListener("click", closeWorkFlyout);
 });
 function isInViewport(element) {
     var elementTop = $(element).offset().top;

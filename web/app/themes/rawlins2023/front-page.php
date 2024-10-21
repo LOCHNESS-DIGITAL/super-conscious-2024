@@ -43,7 +43,7 @@ get_header();
                                     <ul class="work__item__terms">
                                         <?php foreach ( $terms as $term ): ?>
                                             <?php /*<li><a class="c-button" href="<?php echo get_home_url(); ?>/work-type/<?php echo $term->slug; ?>"><span><?php echo $term->name; ?></span></a></li>*/?>
-                                            <li><a class="c-button" href="#"><span><?php echo $term->name; ?></span></a></li>
+                                            <li class="c-button"><span><?php echo $term->name; ?></span></li>
                                         <?php endforeach; ?>
                                     </ul>
                                 <?php endif; ?>

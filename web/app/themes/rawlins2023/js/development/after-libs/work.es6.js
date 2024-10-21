@@ -51,10 +51,6 @@ if (elms.length) {
             $('.work__item__images').removeClass('dragging');
         } );
 
-        // splide.on('ready', aspectRatios);
-
-        aspectRatios();
-
         $(window).on('load', function(){
             if(isInViewport(currentItem)){
                 splide_init(splide);
@@ -114,6 +110,8 @@ $(window).on('load', function(){
         }
     }
 
+    aspectRatios();
+
     $(document).on('click', '.work__item__video__volume-up',function(){
         const video = $(this).prev('video');
         $(this).removeClass('active');
@@ -146,8 +144,9 @@ $(window).on('load', function(){
         closeButton.addEventListener('click', closeWorkFlyout);
     })
 
-});
+    document.querySelector('.work__flyout-overlay').addEventListener('click', closeWorkFlyout)
 
+});
 
 function isInViewport(element) {
     var elementTop = $(element).offset().top;
