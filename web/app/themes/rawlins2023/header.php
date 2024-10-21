@@ -74,7 +74,7 @@ global $post;
       <div class="header__row">
         <div class="header__logo">
           <a href="<?php echo get_home_url(); ?>"class="header__logo__link">
-          <?php echo file_get_contents(get_stylesheet_directory() . '/images/super-conscious-logo-2024.svg'); ?>
+            <?php echo $logo; ?>
           </a>
         </div>
         <div class="intro__description">
