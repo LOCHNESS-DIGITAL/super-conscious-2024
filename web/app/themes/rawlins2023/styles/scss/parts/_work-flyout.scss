@@ -1,7 +1,6 @@
 body {
-    &:before {
+    .work__flyout-overlay {
         pointer-events: none;
-        content: "";
         width: 100%;
         height: 100%;
         background:#000;
@@ -14,7 +13,7 @@ body {
     }
 }
 body.flyout-active {
-    &:before {
+    .work__flyout-overlay {
         pointer-events: inherit;
         opacity: .76;
     }
@@ -147,6 +146,11 @@ body.flyout-active {
 .work__flyout__terms.work__item__terms {
     margin: 22px 0 0;
     max-width: 100%;
+
+    .c-button {
+        background: white;
+        color: black;
+    }
 }
 
 .work__flyout__link {

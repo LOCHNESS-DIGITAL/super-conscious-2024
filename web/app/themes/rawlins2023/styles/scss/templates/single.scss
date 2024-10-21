@@ -74,6 +74,10 @@
   border-top: 1px solid #000;
   transition: border .25s ease;
 
+  @media screen and (max-width: 768px) {
+    padding: 20px 0;
+  }
+
   &.work-single__nav--not-sticky {
     position: relative;
     border: 0;
@@ -236,6 +240,7 @@ body.single {
 }
 
 .content-block__content {
+  @include ft();
   width: 890px;
   max-width: 100%;
   padding: 62px 22px;
