@@ -144,7 +144,9 @@ $(window).on('load', function(){
         closeButton.addEventListener('click', closeWorkFlyout);
     })
 
-    document.querySelector('.work__flyout-overlay').addEventListener('click', closeWorkFlyout)
+    if(document.body.classList.contains('single')){
+        document.querySelector('.work__flyout-overlay').addEventListener('click', closeWorkFlyout)
+    }
 
 });
 
